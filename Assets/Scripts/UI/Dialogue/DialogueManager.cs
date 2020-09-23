@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void DisplayNextSenctence(){
+        Debug.Log("Displaying next sentence!");
         if(sentences.Count == 0){
             EndDialogue();
             return;

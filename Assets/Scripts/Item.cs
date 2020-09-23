@@ -11,6 +11,7 @@ public class Item
         Homework,
     }
 
-    public ItemType type;
+    public ItemType itemType;
     public int amount;
+	
 }

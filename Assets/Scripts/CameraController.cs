@@ -5,11 +5,17 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Transform playerTransform;
+    private bool cameraExists = false;
     // Start is called before the first frame update
     void Start()
     {
          playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-         DontDestroyOnLoad(transform.gameObject);
+         if(!cameraExists){
+             cameraExists = true;
+             DontDestroyOnLoad(transform.gameObject);
+         } else {
+             Destroy(gameObject);
+         }
     }
 
     // Update is called once per frame

@@ -8,10 +8,16 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
+    private bool playerExists = false;
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        if(!playerExists){
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        } else {
+             Destroy(gameObject);
+         }
     }
 
     // Update is called once per frame

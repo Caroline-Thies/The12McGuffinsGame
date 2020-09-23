@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
-    private bool playerExists = false;
+    private static bool playerExists = false;
     // Start is called before the first frame update
     void Start()
     {

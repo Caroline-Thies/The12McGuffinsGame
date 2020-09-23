@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Transform playerTransform;
-    private bool cameraExists = false;
+    private static bool cameraExists = false;
     // Start is called before the first frame update
     void Start()
     {

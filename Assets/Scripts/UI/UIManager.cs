@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    private bool uiManagerExists=false;
+    private static bool uiManagerExists=false;
     void Start()
     {
         if(!uiManagerExists){

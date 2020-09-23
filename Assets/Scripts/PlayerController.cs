@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 4f;
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
+    // Start is called before the first frame update
+    void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    void FixedUpdate(){
+    void FixedUpdate()
+    {
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 }

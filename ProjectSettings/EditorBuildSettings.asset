@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 1ab1fb7afa68d614ba9a0b20bb12ea0a
+  - enabled: 1
+    path: Assets/Scenes/collegeHallway.unity
+    guid: 83d7d6dab77db144091433b67ebc0d24
   m_configObjects: {}

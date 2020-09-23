@@ -121,242 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12395765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 12395767}
-  - component: {fileID: 12395766}
-  - component: {fileID: 12395768}
-  m_Layer: 0
-  m_Name: redBook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &12395766
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12395765}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 1896878122788311055, guid: 975ba69a9e15b1348b78c001b1ecea7d,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.65625, y: 0.65625}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &12395767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12395765}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8150625, y: 0.68207264, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1488468777}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &12395768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12395765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Diary
-    sentences:
-    - This is a diary.
-    - Once the devs implement this feature, this will be a saving point.
---- !u!1001 &165771956
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1128105874}
-    m_Modifications:
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.017156959
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Radius
-      value: 1.0189847
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.6390796
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactKey
-      value: 101
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1128105875}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Hey there! You interacted with this blue book!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286971, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Name
-      value: InteractableCircle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19f1a83ce686eb5468a476eb58830e6a, type: 3}
---- !u!4 &165771957 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 165771956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &287639375
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,112 +619,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0268996, y: 3.0123625}
   m_EdgeRadius: 0
---- !u!1 &1128105872
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1128105874}
-  - component: {fileID: 1128105873}
-  - component: {fileID: 1128105875}
-  m_Layer: 0
-  m_Name: blueBook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1128105873
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128105872}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 8813367284588793931, guid: 975ba69a9e15b1348b78c001b1ecea7d,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.03125, y: 0.65625}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1128105874
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128105872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.707, y: -1.1994587, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 165771957}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1128105875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128105872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: House Rules
-    sentences:
-    - Welcome to the College of History! This book contains the most important house
-      rules.
-    - 'Rule 1: There will be no running in the hallways.'
-    - 'Rule 2: Running in the hallways is prohibited.'
-    - 'Rule 3: You may not run in the hallways.'
-    - If you have trouble remembering these rules, simply refrain from running in
-      the hallways.
 --- !u!1 &1167045709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,126 +1088,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1488468776
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 12395767}
-    m_Modifications:
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.3834185
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286948, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.8834185
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 12395768}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286949, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: interactKey
-      value: 101
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.03972578
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.17799151
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -732.79095
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8403011219903286971, guid: 19f1a83ce686eb5468a476eb58830e6a,
-        type: 3}
-      propertyPath: m_Name
-      value: InteractableCircle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19f1a83ce686eb5468a476eb58830e6a, type: 3}
---- !u!4 &1488468777 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8403011219903286950, guid: 19f1a83ce686eb5468a476eb58830e6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1488468776}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518088981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,3 +2921,193 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af977eca6d79d04db9f86975495c3d6, type: 3}
+--- !u!1001 &5921058923170653183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.name
+      value: House Rules
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: Welcome to the College of History! This book contains the most important
+        house rules.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: 'Rule 1: There will be no running in the hallways.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: 'Rule 2: Running in the hallways is prohibited.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: 'Rule 3: You may not run in the hallways.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338476, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: If you have trouble remembering these rules, simply refrain from running
+        in the hallways.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.234
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338477, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921058924257338479, guid: be66b58cc35d73e4ab3b83374e878252,
+        type: 3}
+      propertyPath: m_Name
+      value: blueOpenBook
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be66b58cc35d73e4ab3b83374e878252, type: 3}
+--- !u!1001 &8609919802601864318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8609919802591565958, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: dialogue.name
+      value: Diary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565958, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: This is a diary.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565958, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Once the devs implement this feature, this will be a saving point.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8150625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68207264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565961, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609919802591565963, guid: bddaacb7ac426084c853e3db3168886a,
+        type: 3}
+      propertyPath: m_Name
+      value: redClosedBook
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bddaacb7ac426084c853e3db3168886a, type: 3}

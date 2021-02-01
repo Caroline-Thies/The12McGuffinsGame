@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerData
 {
-    public string name;
     public string saveLocation;
-    public int[] inventory
+    public string name;
 
     public PlayerData(Player player){
-        name = player.name;
-        saveLocation = player.saveLocation;
-        inventory = player.inventory;
+        this.saveLocation = player.lastSavePoint;
+        this.name = player.name;
     }
 }

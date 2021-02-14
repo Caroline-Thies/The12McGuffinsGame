@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
 {
     private static bool inputManagerExists = false;
 
+    public Canvas canvas;
     public InputField inputField;
     public Button submitButton;
 
@@ -24,10 +25,13 @@ public class InputManager : MonoBehaviour
     }
 
     void Setup() {
+        canvas.enabled = false;
+
         submitButton.onClick.AddListener(() => {
             if (activePrompt != null) {
                 string inputText = inputField.text;
                 
+                canvas.enabled = false;
                 inputField.text = "";
                 inputField.placeholder.GetComponent<Text>().text = "";
 
@@ -47,6 +51,8 @@ public class InputManager : MonoBehaviour
         if (activePrompt != null) {
             return null;
         }
+
+        canvas.enabled = true;
 
         activePrompt = new UserPrompt();
 

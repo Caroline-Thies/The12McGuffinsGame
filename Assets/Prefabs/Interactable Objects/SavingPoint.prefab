@@ -60,6 +60,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5513723994520404455}
+        m_MethodName: TriggerSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &8609919800759161674
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -87,8 +98,9 @@ GameObject:
   - component: {fileID: 8609919802591565961}
   - component: {fileID: 8609919802591565960}
   - component: {fileID: 8609919802591565958}
+  - component: {fileID: 5513723994520404455}
   m_Layer: 0
-  m_Name: redClosedBook
+  m_Name: SavingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,5 +185,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
-    sentences: []
+    name: Save Point
+    sentences:
+    - You write down your experiences ...
+    - Your game was saved!
+--- !u!114 &5513723994520404455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609919802591565963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de974f0a242e87d489fa12aa6b5c5786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

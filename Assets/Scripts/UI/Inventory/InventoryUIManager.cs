@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryUIManager : MonoBehaviour
 {
     public GameObject inventoryMenu;
+	public InputManager inputManager;
 	
 	private void Start()
 	{
@@ -18,7 +19,7 @@ public class InventoryUIManager : MonoBehaviour
 	
 	private void InventoryControl()
 	{
-		if(Input.GetKeyDown(KeyCode.Escape))
+		if(inputManager.GetKeyDown(KeyCode.Escape))
 		{
 			//if Game paused, press esc, resume game
 			if(GameManager.instance.isPaused)

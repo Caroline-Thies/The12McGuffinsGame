@@ -35,6 +35,16 @@ public class GameManager : MonoBehaviour
 private void Start()
 {
 	DisplayItems();
+
+	UserPrompt namePrompt = FindObjectOfType<InputManager>().prompt("Username");
+	PlayerController playerController = FindObjectOfType<PlayerController>();
+
+	// I have no clue about C# GC, so I'm just gonna assume that it's gonna
+	// clean this up properly and we don't have to do it manually.
+	namePrompt.onSubmit.AddListener(name => {
+		playerController.username = name;
+		Debug.Log("The player has changed their name to '" + playerController.username + "'");
+	});
 }
 
 private void DisplayItems()

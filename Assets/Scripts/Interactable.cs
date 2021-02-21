@@ -7,10 +7,15 @@ public class Interactable : MonoBehaviour
     public bool isInRange = false;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public InputManager inputManager;
+
+    void Start() {
+        inputManager = FindObjectOfType<InputManager>();
+    }
 
     void Update(){
         if(isInRange){
-            if (Input.GetKeyDown(interactKey)){
+            if (inputManager.GetKeyDown(interactKey)){
                 interactAction.Invoke();
             }
         }

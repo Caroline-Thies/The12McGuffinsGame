@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 4f;
+    public string username = "Default Username";
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
+    public InputManager inputManager;
     private static bool playerExists = false;
     // Start is called before the first frame update
     void Start()
@@ -23,8 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement = inputManager.GetMovement();
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);

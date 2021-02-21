@@ -10,6 +10,7 @@ public class InventoryUIManager : MonoBehaviour
 	private void Start()
 	{
 		inventoryMenu.gameObject.SetActive(false);
+		inputManager = FindObjectOfType<InputManager>();
 	}
 	
 	private void Update()

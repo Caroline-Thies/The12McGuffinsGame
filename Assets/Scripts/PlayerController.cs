@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!playerExists){
             playerExists = true;
+            inputManager = FindObjectOfType<InputManager>();
             DontDestroyOnLoad(transform.gameObject);
         } else {
              Destroy(gameObject);

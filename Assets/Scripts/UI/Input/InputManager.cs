@@ -47,6 +47,25 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public Vector2 GetMovement() {
+        if (activePrompt != null) {
+            return new Vector2(0, 0);
+        }
+
+        return new Vector2(
+            Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")
+        );
+    }
+
+    public bool GetKeyDown(UnityEngine.KeyCode name) {
+        if (activePrompt == null) {
+            return Input.GetKeyDown(name);
+        } else {
+            return false;
+        }
+    }
+
     public UserPrompt prompt(string placeholder) {
         if (activePrompt != null) {
             return null;

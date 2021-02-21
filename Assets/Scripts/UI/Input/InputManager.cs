@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     }
 
     void Setup() {
+        inputField.enabled = false;
         canvas.enabled = false;
 
         submitButton.onClick.AddListener(() => {
@@ -34,6 +35,7 @@ public class InputManager : MonoBehaviour
                 canvas.enabled = false;
                 inputField.text = "";
                 inputField.placeholder.GetComponent<Text>().text = "";
+                inputField.enabled = false;
 
                 activePrompt.onSubmit.Invoke(inputText);
                 activePrompt = null;
@@ -71,6 +73,7 @@ public class InputManager : MonoBehaviour
             return null;
         }
 
+        inputField.enabled = true;
         canvas.enabled = true;
 
         activePrompt = new UserPrompt();

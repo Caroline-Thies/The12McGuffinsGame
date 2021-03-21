@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c826700e4b7114189a32016e8e801107, type: 3}
+  m_Name: Wayback Machine
+  m_EditorClassIdentifier: 
+  identifier: wayback-machine
+  sprite: {fileID: 21300000, guid: 335f1400a3428407382d7de1b505bb38, type: 3}
+  hiddenSprite: {fileID: 21300000, guid: 38a5ec5ee781c4d06a801fcb42fc7ea2, type: 3}

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c826700e4b7114189a32016e8e801107, type: 3}
+  m_Name: McGuffin
+  m_EditorClassIdentifier: 
+  identifier: mcguffin
+  sprite: {fileID: 21300000, guid: 72f598af3c3564e41a2f80457a9c9321, type: 3}
+  hiddenSprite: {fileID: 21300000, guid: aa06f50b78bd9409ea01f3ff79e9487b, type: 3}

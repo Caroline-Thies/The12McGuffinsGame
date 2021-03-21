@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour {
     private HashSet<String> itemsInPossession = new HashSet<String>();
 
     void Start() {
+        canvas.enabled = false;
+
         RectTransform containerTransform = (RectTransform) slotContainer.transform;
         RectTransform slotTransform = (RectTransform) itemSlotPrefab.transform;
 

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
    public InputManager inputManager;
    public InventoryManager inventoryManager;
    public UIManager uiManager;
+   private bool gameManagerExists = false;
 
    public bool isPaused;
    
@@ -36,8 +37,12 @@ private void Start()
 	UserPrompt namePrompt = FindObjectOfType<InputManager>().prompt("Username");
 	PlayerController playerController = FindObjectOfType<PlayerController>();
 
-	// I have no clue about C# GC, so I'm just gonna assume that it's gonna
-	// clean this up properly and we don't have to do it manually.
+	if(!gameManagerExists){
+		this.gameManagerExists = true;
+		DontDestroyOnLoad(transform.gameObject);
+	} else {
+		Destroy(gameObject);
+	}
 	namePrompt.onSubmit.AddListener(name => {
 		playerController.username = name;
 		Debug.Log("The player has changed their name to '" + playerController.username + "'");

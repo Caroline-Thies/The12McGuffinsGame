@@ -6441,6 +6441,8 @@ MonoBehaviour:
   slotContainer: {fileID: 6477188057806394638}
   itemSlotPrefab: {fileID: 1596857544011606312, guid: 82dfc2d7cbb6f4f38a355c4a611068e0,
     type: 3}
+  inputManager: {fileID: 0}
+  toggleMenuKey: 27
 --- !u!1 &7983391484648126959
 GameObject:
   m_ObjectHideFlags: 0

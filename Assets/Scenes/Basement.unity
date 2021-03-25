@@ -2570,6 +2570,61 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.02714932
+      objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.7799194
+      objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17079616
+      objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7521577
+      objectReference: {fileID: 0}
+    - target: {fileID: 650600028652917559, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370544152451709506, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1630775075}
+    - target: {fileID: 4370544152451709506, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370544152451709506, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370544152451709506, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370544152451709506, guid: 68a89433513e5ad48bd4fdeb5782d683,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LoadNewArea
+      objectReference: {fileID: 0}
     - target: {fileID: 4370544152451709507, guid: 68a89433513e5ad48bd4fdeb5782d683,
         type: 3}
       propertyPath: m_Offset.x
@@ -2610,7 +2665,8 @@ PrefabInstance:
       propertyPath: dialogue.name
       value: WayBackMachine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6786370697221896315, guid: 68a89433513e5ad48bd4fdeb5782d683, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68a89433513e5ad48bd4fdeb5782d683, type: 3}
 --- !u!1 &1630775074 stripped
 GameObject:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 4f;
-    public string username = "Default Username";
+    public string username = "Alex";
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;

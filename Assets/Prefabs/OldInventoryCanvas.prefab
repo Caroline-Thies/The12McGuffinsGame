@@ -411,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 26.300049, y: -39.5}
+  m_AnchoredPosition: {x: 26.300049, y: -39.500122}
   m_SizeDelta: {x: 52.57422, y: 79.1261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4692109970439641401
@@ -5891,7 +5891,7 @@ GameObject:
   - component: {fileID: 4692109971991592655}
   - component: {fileID: 4692109971991592652}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: OldInventoryCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

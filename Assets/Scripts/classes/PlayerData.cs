@@ -8,7 +8,7 @@ public class PlayerData
     public string saveLocation;
     public string name;
 
-    public PlayerData(Player player){
+    public PlayerData(PlayerController player){
         this.saveLocation = player.lastSavePoint;
         this.name = player.name;
     }

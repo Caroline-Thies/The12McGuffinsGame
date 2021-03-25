@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 4f;
     public string username = "Alex";
+    public string lastSavePoint = "BEDROOM";
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
@@ -36,5 +37,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+    }
+
+    public void SavePlayer(){
+        SaveSystem.SavePlayer(this);
     }
 }

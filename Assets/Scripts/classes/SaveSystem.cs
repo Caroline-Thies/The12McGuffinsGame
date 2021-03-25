@@ -5,7 +5,7 @@ public static class SaveSystem
 {
     private static string savePath = Application.persistentDataPath + "/player.guf";
 
-    public static void SavePlayer(Player player){
+    public static void SavePlayer(PlayerController player){
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(savePath, FileMode.Create);
         PlayerData data = new PlayerData(player);

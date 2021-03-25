@@ -7,6 +7,12 @@ using UnityEditor.UI;
 public class GameManager : MonoBehaviour
 {
    public static GameManager instance;
+   public DialogueManager dialogueManager;
+   public InventoryManager inventoryManager;
+   public UIManager uiManager;
+   public PlayerController player;
+   private bool gameManagerExists = false;
+
    public bool isPaused;
    
    public void Awake()
@@ -26,17 +32,18 @@ public class GameManager : MonoBehaviour
 	   }
 	}
 	   
-private void Start()
-{
-	UserPrompt namePrompt = FindObjectOfType<InputManager>().prompt("Username");
-	PlayerController playerController = FindObjectOfType<PlayerController>();
+	private void Start()
+	{
+		if(!gameManagerExists){
+			this.gameManagerExists = true;
+			DontDestroyOnLoad(transform.gameObject);
+		} else {
+			Destroy(gameObject);
+		}
+	}
 
-	// I have no clue about C# GC, so I'm just gonna assume that it's gonna
-	// clean this up properly and we don't have to do it manually.
-	namePrompt.onSubmit.AddListener(name => {
-		playerController.username = name;
-		Debug.Log("The player has changed their name to '" + playerController.username + "'");
-	});
-}
+	public InputManager getInputManager(){
+		return uiManager.inputManager;
+	}
 }
 

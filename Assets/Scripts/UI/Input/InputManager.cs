@@ -27,20 +27,20 @@ public class InputManager : MonoBehaviour
     void Setup() {
         inputField.enabled = false;
         canvas.enabled = false;
+    }
 
-        submitButton.onClick.AddListener(() => {
-            if (activePrompt != null) {
-                string inputText = inputField.text;
-                
-                canvas.enabled = false;
-                inputField.text = "";
-                inputField.placeholder.GetComponent<Text>().text = "";
-                inputField.enabled = false;
+    public void close() {
+        if (activePrompt != null) {
+            string inputText = inputField.text;
+            
+            canvas.enabled = false;
+            inputField.text = "";
+            inputField.placeholder.GetComponent<Text>().text = "";
+            inputField.enabled = false;
 
-                activePrompt.onSubmit.Invoke(inputText);
-                activePrompt = null;
-            }
-        });
+            activePrompt.onSubmit.Invoke(inputText);
+            activePrompt = null;
+        }
     }
 
     void Update() {

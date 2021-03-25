@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d030004b4572ae146b62f17978d3b3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Bedroom
+  sceneToLoad: Basement
 --- !u!114 &2123929734
 MonoBehaviour:
   m_ObjectHideFlags: 0

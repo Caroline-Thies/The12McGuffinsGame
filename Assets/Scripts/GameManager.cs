@@ -7,6 +7,11 @@ using UnityEditor.UI;
 public class GameManager : MonoBehaviour
 {
    public static GameManager instance;
+   public DialogueManager dialogueManager;
+   public InputManager inputManager;
+   public InventoryManager inventoryManager;
+   public UIManager uiManager;
+
    public bool isPaused;
    
    public void Awake()

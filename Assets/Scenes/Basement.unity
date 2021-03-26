@@ -2567,8 +2567,6 @@ GameObject:
   - component: {fileID: 1398085303}
   - component: {fileID: 1398085300}
   - component: {fileID: 1398085299}
-  - component: {fileID: 1398085298}
-  - component: {fileID: 1398085297}
   m_Layer: 0
   m_Name: Wayback Machine
   m_TagString: Untagged
@@ -2576,31 +2574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1398085297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398085296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0955cda374c454922aea787c239d7e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1398085298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398085296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d030004b4572ae146b62f17978d3b3f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: Bedroom
 --- !u!58 &1398085299
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2658,7 +2631,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1837369315
 PrefabInstance:
@@ -2838,5 +2811,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayBackMachine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7342304380219507505, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507505, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6431791378984614270, guid: 3ada54d1ab582a947aa1a9836edf8a7f, type: 3}
+    - {fileID: 7342304380219507518, guid: 3ada54d1ab582a947aa1a9836edf8a7f, type: 3}
+    - {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3ada54d1ab582a947aa1a9836edf8a7f, type: 3}
+--- !u!1 &6431791380581817950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7342304380219507516, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6431791380581817949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &6431791380581817951
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431791380581817950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.72
+--- !u!114 &6431791380581817952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431791380581817950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0955cda374c454922aea787c239d7e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

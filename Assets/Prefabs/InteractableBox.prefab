@@ -49,13 +49,13 @@ MonoBehaviour:
   interactAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 650600028652917546, guid: 68a89433513e5ad48bd4fdeb5782d683,
+      - m_Target: {fileID: 6786370697221896315, guid: 68a89433513e5ad48bd4fdeb5782d683,
           type: 3}
-        m_MethodName: 
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -10,7 +10,7 @@ public class WaybackMachine : MonoBehaviour
 
     void Start()
     {
-        loadNew = new LoadNewArea();
+        loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
         invManager = FindObjectOfType<InventoryManager>();
         interactable = GetComponent<Interactable>();
 

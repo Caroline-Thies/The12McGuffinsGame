@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 4f;
-    public string username = "Default Username";
+    public string username = "Alex";
+    public string lastSavePoint = "BEDROOM";
     public Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
-    public InputManager inputManager;
+    public GameManager gameManager;    
+
     private static bool playerExists = false;
     // Start is called before the first frame update
     void Start()
     {
         if(!playerExists){
             playerExists = true;
-            inputManager = FindObjectOfType<InputManager>();
+            gameManager = FindObjectOfType<GameManager>();
             DontDestroyOnLoad(transform.gameObject);
         } else {
              Destroy(gameObject);
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InputManager inputManager = gameManager.getInputManager();
         movement = inputManager.GetMovement();
 
         animator.SetFloat("Horizontal", movement.x);
@@ -36,5 +39,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+    }
+
+    public void SavePlayer(){
+        SaveSystem.SavePlayer(this);
     }
 }

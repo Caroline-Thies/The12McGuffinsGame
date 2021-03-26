@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/collegeHallway.unity
     guid: 83d7d6dab77db144091433b67ebc0d24
+  - enabled: 1
+    path: Assets/Scenes/Factory.unity
+    guid: d1db23b3f92fbae4f8e8f5ae3efb89d1
+  - enabled: 1
+    path: Assets/Scenes/Basement.unity
+    guid: 872cb071ffe05fc428258e65390e01ba
   m_configObjects: {}

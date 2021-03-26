@@ -6,6 +6,6 @@ public class SaveTrigger : MonoBehaviour
 {
     public void TriggerSave()
     {
-        FindObjectOfType<Player>().SavePlayer();
+        FindObjectOfType<PlayerController>().SavePlayer();
     }
 }

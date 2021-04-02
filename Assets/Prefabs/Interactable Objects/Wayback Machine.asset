@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wayback Machine
   m_EditorClassIdentifier: 
   identifier: wayback-machine
-  sprite: {fileID: 21300000, guid: 335f1400a3428407382d7de1b505bb38, type: 3}
-  hiddenSprite: {fileID: 21300000, guid: 38a5ec5ee781c4d06a801fcb42fc7ea2, type: 3}
+  sprite: {fileID: 21300000, guid: ea4145272473c460fac7c46e9cc9a2ba, type: 3}
+  hiddenSprite: {fileID: 21300000, guid: 9a5428736847342f0a20b1887026875d, type: 3}

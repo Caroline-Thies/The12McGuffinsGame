@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour {
     public Canvas canvas;
     public GameObject slotContainer;
     public GameObject itemSlotPrefab;
+    public InputManager inputManager;
+    public KeyCode toggleMenuKey;
 
     private class SlotInstance {
         public GameObject uiSlot;
@@ -21,6 +23,7 @@ public class InventoryManager : MonoBehaviour {
     private HashSet<String> itemsInPossession = new HashSet<String>();
 
     void Start() {
+        inputManager = inputManager == null ? FindObjectOfType<InputManager>() : inputManager;
         canvas.enabled = false;
 
         RectTransform containerTransform = (RectTransform) slotContainer.transform;
@@ -62,6 +65,16 @@ public class InventoryManager : MonoBehaviour {
 
         containerTransform.pivot = oldPivot;
         updateSlots();
+    }
+
+    public void Update() {
+        if (inputManager.GetKeyDown(toggleMenuKey)) {
+            if (IsShown()) {
+                Hide();
+            } else {
+                Show();
+            }
+        }
     }
 
     public void GiveItem(string identifier) {

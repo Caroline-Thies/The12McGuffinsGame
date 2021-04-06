@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d13314089302a7a40b8840e9235918b0
+  - enabled: 1
+    path: Assets/Scenes/CollegeCourt.unity
+    guid: 41528a53d0d3376438d8e5b0a906912d
+  - enabled: 1
+    path: Assets/Scenes/collegeMainBuildingHallway.unity
+    guid: 40f0fa12f37623940b00cbb95dbcaa36
+  - enabled: 1
+    path: Assets/Scenes/classroom1.unity
+    guid: dd7380e23f271724db937b0ec094814b
+  - enabled: 1
+    path: Assets/Scenes/classroom2.unity
+    guid: 671dfb7f5373b4e4aa4fd4de60149455
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 11193622da027415f8fedcda5ce58709
   m_configObjects: {}

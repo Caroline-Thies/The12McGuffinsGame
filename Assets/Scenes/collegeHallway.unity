@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 1408789737056727900, guid: e4890c54f3825a24a9d5c358e318249a,
         type: 3}
       propertyPath: sceneToLoad
-      value: Factory
+      value: CollegeCourt
       objectReference: {fileID: 0}
     - target: {fileID: 7315070801157063788, guid: e4890c54f3825a24a9d5c358e318249a,
         type: 3}

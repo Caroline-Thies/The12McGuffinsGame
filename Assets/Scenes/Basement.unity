@@ -2714,11 +2714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 650600027055780876}
+      objectReference: {fileID: 650600027055780878}
     - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
+      value: triggerDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}

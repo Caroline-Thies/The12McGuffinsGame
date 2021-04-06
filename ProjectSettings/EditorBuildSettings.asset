@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CollegeCourt.unity
     guid: 41528a53d0d3376438d8e5b0a906912d
+  - enabled: 1
+    path: Assets/Scenes/collegeMainBuildingHallway.unity
+    guid: 40f0fa12f37623940b00cbb95dbcaa36
   m_configObjects: {}

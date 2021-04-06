@@ -2266,6 +2266,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3327401680099728513, guid: 8aedfec540056904d83152cc17f63681,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: basement
+      objectReference: {fileID: 0}
     - target: {fileID: 6033067693003495684, guid: 8aedfec540056904d83152cc17f63681,
         type: 3}
       propertyPath: m_Offset.y

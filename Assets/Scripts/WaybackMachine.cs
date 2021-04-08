@@ -16,7 +16,7 @@ public class WaybackMachine : MonoBehaviour
 
         interactable.interactAction.AddListener(() => {
             if (invManager.HasItem("mcguffin")) {
-                loadNew.sceneToLoad = "Bedroom";
+                loadNew.sceneToLoad = "Credits";
             } else {
                 loadNew.sceneToLoad = "Factory";
             }

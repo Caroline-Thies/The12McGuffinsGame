@@ -19,7 +19,7 @@ public class WaybackMachine : MonoBehaviour
                 loadNew.sceneToLoad = "Bedroom";
             } else {
                 loadNew.sceneToLoad = "Factory";
-            }
+            } 
 
             loadNew.LoadArea();
         });

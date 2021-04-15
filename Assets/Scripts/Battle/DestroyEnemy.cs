@@ -1,10 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyEnemy : MonoBehaviour
 {
-	public GameObject Monster1;
+	
+	public static HashSet<string> deadEnemies = new HashSet<string>();
+	bool shouldDelete = false;
+	
+	
+	public void Start(){
+		shouldDelete = deadEnemies.Contains(getEnemyID());
+		
+	}
+	
+	public void Update(){
+		if(shouldDelete == true){
+			Destroy(gameObject);
+		}
+		
+	}
+	
+	public string getEnemyID(){
+	
+		return SceneManager.GetActiveScene().name + "-" + gameObject.name;
+	}
+	
+	
+	
+/*	public GameObject Monster1;
 	public GameObject Monster2;
 	public GameObject Monster3;
 	public bool M1isDead = false;
@@ -20,7 +45,6 @@ public class DestroyEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Debug.Log(M1isDead);
 		if(M1isDead){
 			Destroy(Monster1);
 		}
@@ -30,5 +54,6 @@ public class DestroyEnemy : MonoBehaviour
 		if(M3isDead){
 			Destroy(Monster3);
 		}
-    }
+   }
+    */
 }

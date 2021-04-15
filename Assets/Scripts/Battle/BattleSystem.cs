@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
@@ -13,9 +14,6 @@ public class BattleSystem : MonoBehaviour
 	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
-
-	public string Enemy;
-
 
 	public Transform playerBattleStation;
 	public Transform enemyBattleStation;
@@ -35,6 +33,7 @@ public class BattleSystem : MonoBehaviour
 	public BattleState state;
 	
 	int currentAction;
+	public static string currentEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -42,13 +41,9 @@ public class BattleSystem : MonoBehaviour
 		loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
-		
-		Enemy = loadNew.enemy;
-		
-	//	Enemy = GetComponent<LoadNewArea>().enemy;
-		Debug.Log(Enemy);
 
-		
+			Debug.Log(currentEnemy);
+
     }
 
 	IEnumerator SetupBattle()
@@ -87,10 +82,10 @@ public class BattleSystem : MonoBehaviour
 
 	
 	void HandleActionSelection(){
-		if(Input.GetKeyDown(KeyCode.W)){
+		if(Input.GetKeyDown(KeyCode.S)){
 			if(currentAction < 1)
 			++currentAction;
-		} else if(Input.GetKeyDown(KeyCode.D)){
+		} else if(Input.GetKeyDown(KeyCode.W)){
 			if(currentAction > 0)
 			--currentAction;
 		}
@@ -150,6 +145,8 @@ public class BattleSystem : MonoBehaviour
 			EndBattle();
 			EnemyDieController();
 
+		
+
 
 			loadNew.sceneToLoad = "Maze";
 			loadNew.LoadArea();
@@ -163,13 +160,14 @@ public class BattleSystem : MonoBehaviour
 	
 	public void EnemyDieController(){
 		
-			if(Enemy == "Monster 1"){
+		/*	if(currentEnemy == "Monster 1"){
 				killEnemy.M1isDead = true;
-			} else if(Enemy == "Monster 2"){
+			} else if(currentEnemy == "Monster 2"){
 				killEnemy.M2isDead = true;
-			} else if(Enemy == "Monster 3"){
+			} else if(currentEnemy == "Monster 3"){
 				killEnemy.M3isDead = true;
-			}
+			} */
+			DestroyEnemy.deadEnemies.Add(BattleSystem.currentEnemy);
 	}
 	
 	IEnumerator EnemyTurn()

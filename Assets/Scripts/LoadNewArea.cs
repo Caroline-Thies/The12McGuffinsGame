@@ -5,16 +5,21 @@ using UnityEngine;
 public class LoadNewArea : MonoBehaviour
 {
     public string sceneToLoad;
-	public string enemy;
 	
     public void LoadArea(){
 
         Application.LoadLevel(sceneToLoad);
     }
 	
-	void OnTriggerEnter2D(Collider2D other){
+	public void OnTriggerEnter2D(Collider2D other){
        if(other.gameObject.CompareTag("Player")){
-			enemy = gameObject.name;
+		    DestroyEnemy enemyDestory = gameObject.GetComponent<DestroyEnemy>();
+			if(enemyDestory != null){
+				BattleSystem.currentEnemy = enemyDestory.getEnemyID();
+				Debug.Log(BattleSystem.currentEnemy);
+			}
+
+
 			Application.LoadLevel(sceneToLoad);
         }
 	}

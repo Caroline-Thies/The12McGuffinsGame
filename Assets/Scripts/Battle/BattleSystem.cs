@@ -145,9 +145,6 @@ public class BattleSystem : MonoBehaviour
 			EndBattle();
 			EnemyDieController();
 
-		
-
-
 			loadNew.sceneToLoad = "Maze";
 			loadNew.LoadArea();
 			
@@ -159,14 +156,6 @@ public class BattleSystem : MonoBehaviour
 	}
 	
 	public void EnemyDieController(){
-		
-		/*	if(currentEnemy == "Monster 1"){
-				killEnemy.M1isDead = true;
-			} else if(currentEnemy == "Monster 2"){
-				killEnemy.M2isDead = true;
-			} else if(currentEnemy == "Monster 3"){
-				killEnemy.M3isDead = true;
-			} */
 			DestroyEnemy.deadEnemies.Add(BattleSystem.currentEnemy);
 	}
 	

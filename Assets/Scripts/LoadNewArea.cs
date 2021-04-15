@@ -6,6 +6,7 @@ public class LoadNewArea : MonoBehaviour
 {
     public string sceneToLoad;
     public void LoadArea(){
+        movePlayerStartPoint();
         Application.LoadLevel(sceneToLoad);
     }
 	
@@ -14,4 +15,13 @@ public class LoadNewArea : MonoBehaviour
          Application.LoadLevel(sceneToLoad);
         }
 	}
+
+    private void movePlayerStartPoint(){
+        PlayerStartPoint point = FindObjectOfType<PlayerStartPoint>();
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (point == null || player == null){
+            return;
+        }
+        point.transform.position = player.transform.position;
+    }
 }

@@ -8,6 +8,9 @@ public class WaybackMachine : MonoBehaviour
     InventoryManager invManager;
     Interactable interactable;
 
+    public string destIfMcGuffinFound;
+    public string destIfMcGuffinNotFound;
+
     void Start()
     {
         loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
@@ -16,10 +19,10 @@ public class WaybackMachine : MonoBehaviour
 
         interactable.interactAction.AddListener(() => {
             if (invManager.HasItem("mcguffin")) {
-                loadNew.sceneToLoad = "Bedroom";
+                loadNew.sceneToLoad = destIfMcGuffinFound;
             } else {
-                loadNew.sceneToLoad = "Factory";
-            } 
+                loadNew.sceneToLoad = destIfMcGuffinNotFound;
+            }
 
             loadNew.LoadArea();
         });

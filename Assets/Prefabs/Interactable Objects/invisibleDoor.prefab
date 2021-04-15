@@ -103,6 +103,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6351222113266183091}
     m_Modifications:
+    - target: {fileID: 6694206023056803124, guid: 25a923c5045b0ae439d37eed1f3bd940,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694206023056803124, guid: 25a923c5045b0ae439d37eed1f3bd940,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3327401680099728513}
+    - target: {fileID: 6694206023056803124, guid: 25a923c5045b0ae439d37eed1f3bd940,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694206023056803124, guid: 25a923c5045b0ae439d37eed1f3bd940,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6694206023056803126, guid: 25a923c5045b0ae439d37eed1f3bd940,
         type: 3}
       propertyPath: m_Name

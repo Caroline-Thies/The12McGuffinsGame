@@ -6,18 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d13314089302a7a40b8840e9235918b0
-  - enabled: 1
-    path: Assets/Scenes/Basement.unity
-    guid: 872cb071ffe05fc428258e65390e01ba
-  - enabled: 1
-    path: Assets/Scenes/Maze.unity
-    guid: 11193622da027415f8fedcda5ce58709
-  - enabled: 1
-    path: Assets/Scenes/Factory.unity
-    guid: d1db23b3f92fbae4f8e8f5ae3efb89d1
-  - enabled: 1
     path: Assets/Scenes/Bedroom.unity
     guid: d772bd2a53a925047b9e214f7102aa24
   - enabled: 1
@@ -27,9 +15,36 @@ EditorBuildSettings:
     path: Assets/Scenes/collegeHallway.unity
     guid: 83d7d6dab77db144091433b67ebc0d24
   - enabled: 1
+    path: Assets/Scenes/Factory.unity
+    guid: d1db23b3f92fbae4f8e8f5ae3efb89d1
+  - enabled: 1
+    path: Assets/Scenes/Basement.unity
+    guid: 872cb071ffe05fc428258e65390e01ba
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 11193622da027415f8fedcda5ce58709
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: bfe29b35a62a45d4c94b26aa69a9ac49
   - enabled: 1
     path: Assets/Scenes/BattleArea.unity
     guid: fc6f2b9352056b5498c9c1e4569df1f6
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d13314089302a7a40b8840e9235918b0
+  - enabled: 1
+    path: Assets/Scenes/CollegeCourt.unity
+    guid: 41528a53d0d3376438d8e5b0a906912d
+  - enabled: 1
+    path: Assets/Scenes/collegeMainBuildingHallway.unity
+    guid: 40f0fa12f37623940b00cbb95dbcaa36
+  - enabled: 1
+    path: Assets/Scenes/classroom1.unity
+    guid: dd7380e23f271724db937b0ec094814b
+  - enabled: 1
+    path: Assets/Scenes/classroom2.unity
+    guid: 671dfb7f5373b4e4aa4fd4de60149455
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 11193622da027415f8fedcda5ce58709
   m_configObjects: {}

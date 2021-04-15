@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class InventoryItemInstance : MonoBehaviour {
 
     public InventoryItem item;
@@ -7,21 +8,41 @@ public class InventoryItemInstance : MonoBehaviour {
     InventoryManager invManager;
     SpriteRenderer spriteRenderer;
 
+    private InventoryItem lastSelectedItem = null;
+
     void Start() {
-        invManager = FindObjectOfType<InventoryManager>();
-        interactable = GetComponent<Interactable>();
+        if (Application.isPlaying) {
+            invManager = FindObjectOfType<InventoryManager>();
+            interactable = GetComponent<Interactable>();
 
-        if (!invManager.HasItem(item.identifier)) {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = item.sprite;
+            if (!invManager.HasItem(item.identifier)) {
+                LoadSprite();
 
-            interactable.interactAction.AddListener(() => {
-                invManager.GiveItem(item.identifier);
+                interactable.interactAction.AddListener(() => {
+                    invManager.GiveItem(item.identifier);
+                    Disable();
+                });
+            } else {
                 Disable();
-            });
-        } else {
-            Disable();
+            }
         }
+    }
+
+#if UNITY_EDITOR
+    void Update() {
+        if (Application.isPlaying)
+            return;
+
+        if (item != lastSelectedItem) {
+            LoadSprite();
+            lastSelectedItem = item;
+        }
+    }
+#endif
+
+    void LoadSprite() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = item.sprite;
     }
 
     void Disable() {

@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Soulad
+  weapon: {fileID: 11400000, guid: 9c0cdbf7bda1e4aa98e3bc7d847cd129, type: 2}
+  armor: {fileID: 11400000, guid: 896dd6faa4c904b3a80993eb3d29e35c, type: 2}
   damage: 5
   maxHP: 35
   currentHP: 35

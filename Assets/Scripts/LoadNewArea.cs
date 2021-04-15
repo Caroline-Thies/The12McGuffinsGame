@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNewArea : MonoBehaviour
 {
@@ -12,16 +13,13 @@ public class LoadNewArea : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D other){
        if(other.gameObject.CompareTag("Player")){
-         Application.LoadLevel(sceneToLoad);
+         LoadArea();
         }
 	}
 
     private void movePlayerStartPoint(){
-        PlayerStartPoint point = FindObjectOfType<PlayerStartPoint>();
         PlayerController player = FindObjectOfType<PlayerController>();
-        if (point == null || player == null){
-            return;
-        }
-        point.transform.position = player.transform.position;
+        string sceneName = SceneManager.GetActiveScene().name;
+        ScenesData.lastPlayerTransforms[sceneName] = player.transform.position;
     }
 }

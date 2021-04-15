@@ -1,6 +1,8 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Interactable))]
 public class InventoryItemInstance : MonoBehaviour {
 
     public InventoryItem item;

@@ -9,9 +9,13 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public class BattleSystem : MonoBehaviour
 {
 	LoadNewArea loadNew;
-
+	DestroyEnemy killEnemy;
+	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
+
+	public string Enemy;
+
 
 	public Transform playerBattleStation;
 	public Transform enemyBattleStation;
@@ -35,8 +39,16 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
+		
+		Enemy = loadNew.enemy;
+		
+	//	Enemy = GetComponent<LoadNewArea>().enemy;
+		Debug.Log(Enemy);
+
+		
     }
 
 	IEnumerator SetupBattle()
@@ -94,6 +106,9 @@ public class BattleSystem : MonoBehaviour
 				StartCoroutine(PlayerAttack());
 			} else if(currentAction == 1){
 				
+			loadNew.sceneToLoad = "Maze";
+			loadNew.LoadArea();
+				
 				//
 				//
 				//
@@ -133,11 +148,28 @@ public class BattleSystem : MonoBehaviour
 		{
 			state = BattleState.WON;
 			EndBattle();
+			EnemyDieController();
+
+
+			loadNew.sceneToLoad = "Maze";
+			loadNew.LoadArea();
+			
 		} else
 		{
 			state = BattleState.ENEMYTURN;
 			StartCoroutine(EnemyTurn());
 		}
+	}
+	
+	public void EnemyDieController(){
+		
+			if(Enemy == "Monster 1"){
+				killEnemy.M1isDead = true;
+			} else if(Enemy == "Monster 2"){
+				killEnemy.M2isDead = true;
+			} else if(Enemy == "Monster 3"){
+				killEnemy.M3isDead = true;
+			}
 	}
 	
 	IEnumerator EnemyTurn()
@@ -174,6 +206,7 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You were defeated.";
 		}
 		
+		//
 		//
 		//
 		// Ende

@@ -10,7 +10,9 @@ public class InventoryItemInstance : MonoBehaviour {
     InventoryManager invManager;
     SpriteRenderer spriteRenderer;
 
+#if UNITY_EDITOR
     private InventoryItem lastSelectedItem = null;
+#endif
 
     void Start() {
         if (Application.isPlaying) {

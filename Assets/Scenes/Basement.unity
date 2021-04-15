@@ -2655,6 +2655,38 @@ MonoBehaviour:
     name: WayBackMachine
     sentences:
     - Boom! Swoosh! Find the McGuffin and put it in the machine to save the world!
+--- !u!114 &650600027055780877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650600027055780875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: MCGUFFIN_FOUND
+  ifTriggered: {fileID: 0}
+  ifNotTriggered: {fileID: 650600027055780876}
+--- !u!114 &650600027055780878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650600027055780875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: You won
+    sentences:
+    - Congratulations, you saved the university. Now everyone is slightly less mad
+      at you.
 --- !u!1001 &6431791380581817949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2666,11 +2698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 650600027055780876}
+      objectReference: {fileID: 650600027055780877}
     - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
+      value: triggerDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
@@ -2745,7 +2777,7 @@ PrefabInstance:
     - target: {fileID: 7342304380219507505, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 7342304380219507505, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
@@ -2755,12 +2787,27 @@ PrefabInstance:
     - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.84
+      value: 2.1797373
       objectReference: {fileID: 0}
     - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.31045723
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6209145
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342304380219507519, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.488536
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ada54d1ab582a947aa1a9836edf8a7f, type: 3}
@@ -2782,3 +2829,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0955cda374c454922aea787c239d7e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destIfMcGuffinFound: Credits
+  destIfMcGuffinNotFound: Maze

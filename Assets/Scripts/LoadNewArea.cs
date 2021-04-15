@@ -1,17 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNewArea : MonoBehaviour
 {
     public string sceneToLoad;
     public void LoadArea(){
+        movePlayerStartPoint();
         Application.LoadLevel(sceneToLoad);
     }
 	
 	void OnTriggerEnter2D(Collider2D other){
        if(other.gameObject.CompareTag("Player")){
-         Application.LoadLevel(sceneToLoad);
+         LoadArea();
         }
 	}
+
+    private void movePlayerStartPoint(){
+        PlayerController player = FindObjectOfType<PlayerController>();
+        string sceneName = SceneManager.GetActiveScene().name;
+        ScenesData.lastPlayerTransforms[sceneName] = player.transform.position;
+    }
 }

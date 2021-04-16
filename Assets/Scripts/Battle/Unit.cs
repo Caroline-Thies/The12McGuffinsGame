@@ -7,13 +7,18 @@ public class Unit : MonoBehaviour
 	
 	public string unitName;
 
-	public int damage;
+	public Weapon weapon;
+	public Armor armor;
 
-	public int maxHP;
-	public int currentHP;
+	public float damage;
+
+	public float maxHP;
+	public float currentHP;
 	
-	public bool TakeDamage(int dmg)
+	public bool TakeDamage(Weapon fromWeapon)
 	{
+		float dmg = fromWeapon.calculateDamageGiven(armor);
+
 		currentHP -= dmg;
 
 		if (currentHP <= 0)

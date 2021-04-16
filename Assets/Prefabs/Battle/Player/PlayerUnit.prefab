@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Spieler
+  weapon: {fileID: 11400000, guid: deab2b727b51744f2bbe539219f5db5b, type: 2}
+  armor: {fileID: 11400000, guid: 2eb2f0817218a40e3b5ee4dbdc528f3b, type: 2}
   damage: 10
   maxHP: 50
   currentHP: 45

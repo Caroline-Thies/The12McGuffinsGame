@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715eeb04be52d4b7d9c11df03fa1ae85, type: 3}
+  m_Name: Chainmail Armor
+  m_EditorClassIdentifier: 
+  identifier: chainmail-armor
+  tag: armor
+  sprite: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  hiddenSprite: {fileID: 21300000, guid: 1dcb51f35c19e46a2b2442f10b1b2d75, type: 3}
+  bluntMultiplier: 0.3
+  piercingMultiplier: 0.7

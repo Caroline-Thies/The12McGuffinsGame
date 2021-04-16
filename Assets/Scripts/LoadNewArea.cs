@@ -16,10 +16,7 @@ public class LoadNewArea : MonoBehaviour
 		    DestroyEnemy enemyDestory = gameObject.GetComponent<DestroyEnemy>();
 			if(enemyDestory != null){
 				BattleSystem.currentEnemy = enemyDestory.getEnemyID();
-				Debug.Log(BattleSystem.currentEnemy);
 			}
-
-
 			Application.LoadLevel(sceneToLoad);
         }
 	}

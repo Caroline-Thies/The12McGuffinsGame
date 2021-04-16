@@ -23,7 +23,6 @@ public class DestroyEnemy : MonoBehaviour
 	}
 	
 	public string getEnemyID(){
-	
 		return SceneManager.GetActiveScene().name + "-" + gameObject.name;
 	}
 }

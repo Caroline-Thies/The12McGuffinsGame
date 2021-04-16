@@ -41,11 +41,9 @@ public class BattleSystem : MonoBehaviour
 		loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
-
-			Debug.Log(currentEnemy);
-
     }
 
+	// Create Setup Battle
 	IEnumerator SetupBattle()
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
@@ -66,7 +64,7 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
-	
+	// Player can start fight
 	void PlayerTurn()
 	{
 		dialogueText.text = "Choose an action...";
@@ -74,13 +72,14 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
+	// Fightmenu Selector Update Method
 	private void Update(){
 		if(state == BattleState.PLAYERTURN){
 			HandleActionSelection();
 		}
 	}
 
-	
+	// Fightmenu Selector Controller AND Run Code
 	void HandleActionSelection(){
 		if(Input.GetKeyDown(KeyCode.S)){
 			if(currentAction < 1)
@@ -97,29 +96,18 @@ public class BattleSystem : MonoBehaviour
 				// fight
 				if (state != BattleState.PLAYERTURN)
 					return;
-
-				StartCoroutine(PlayerAttack());
+					StartCoroutine(PlayerAttack());
 			} else if(currentAction == 1){
-				
-			loadNew.sceneToLoad = "Maze";
-			loadNew.LoadArea();
-				
-				//
-				//
-				//
-				//run
-				//
-				//
-				//
-				//
-				
-				
+				// run
+				loadNew.sceneToLoad = "Maze";
+				loadNew.LoadArea();				
 			}
 			
 		}
 		
 	}
 
+	// Fightmenu GUI highlighter
 	void UpdateActionSelection(int selectedAction){
 		for(int i = 0;i<actionText.Count; ++i){
 			if(i == selectedAction){
@@ -130,8 +118,8 @@ public class BattleSystem : MonoBehaviour
 		}
 	}
 	
-	IEnumerator PlayerAttack()
-	{
+	// Playerattack controller
+	IEnumerator PlayerAttack(){
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
@@ -143,10 +131,6 @@ public class BattleSystem : MonoBehaviour
 		{
 			state = BattleState.WON;
 			EndBattle();
-			EnemyDieController();
-
-			loadNew.sceneToLoad = "Maze";
-			loadNew.LoadArea();
 			
 		} else
 		{
@@ -159,8 +143,8 @@ public class BattleSystem : MonoBehaviour
 			DestroyEnemy.deadEnemies.Add(BattleSystem.currentEnemy);
 	}
 	
-	IEnumerator EnemyTurn()
-	{
+	// Enemyturn
+	IEnumerator EnemyTurn(){
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
@@ -183,6 +167,7 @@ public class BattleSystem : MonoBehaviour
 
 	}
 	
+	// End of the Battle
 	void EndBattle()
 	{
 		if(state == BattleState.WON)
@@ -192,6 +177,11 @@ public class BattleSystem : MonoBehaviour
 		{
 			dialogueText.text = "You were defeated.";
 		}
+		
+		EnemyDieController();
+
+		loadNew.sceneToLoad = "Maze";
+		loadNew.LoadArea();
 		
 		//
 		//

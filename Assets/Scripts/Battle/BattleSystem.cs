@@ -23,8 +23,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] List<Text> actionText;
 	[SerializeField] Color highlightedColor;
 	
-	public BattleHud playerHud;
-	public BattleHud enemyHud;
+	public BattleHUD playerHud;
+	public BattleHUD enemyHud;
 
 	Unit playerUnit;
 	Unit enemyUnit;

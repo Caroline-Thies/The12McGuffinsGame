@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BattleHud : MonoBehaviour
+public class BattleHUD : MonoBehaviour
 {
-
 	public Text nameText;
 	public Slider hpSlider;
 
@@ -20,5 +19,4 @@ public class BattleHud : MonoBehaviour
 	{
 		hpSlider.value = hp;
 	}
-
 }

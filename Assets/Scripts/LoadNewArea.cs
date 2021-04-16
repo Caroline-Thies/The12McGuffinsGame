@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class LoadNewArea : MonoBehaviour
 {
     public string sceneToLoad;
+	
     public void LoadArea(){
         movePlayerStartPoint();
         Application.LoadLevel(sceneToLoad);
     }
 	
-	void OnTriggerEnter2D(Collider2D other){
+	public void OnTriggerEnter2D(Collider2D other){
        if(other.gameObject.CompareTag("Player")){
          LoadArea();
         }

@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
 	LoadNewArea loadNew;
-
+	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
 
@@ -22,8 +23,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] List<Text> actionText;
 	[SerializeField] Color highlightedColor;
 	
-	public BattleHUD playerHUD;
-	public BattleHUD enemyHUD;
+	public BattleHud playerHud;
+	public BattleHud enemyHud;
 
 	Unit playerUnit;
 	Unit enemyUnit;
@@ -31,14 +32,17 @@ public class BattleSystem : MonoBehaviour
 	public BattleState state;
 	
 	int currentAction;
+	public static string currentEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
+		loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
     }
 
+	// Create Setup Battle
 	IEnumerator SetupBattle()
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
@@ -49,8 +53,8 @@ public class BattleSystem : MonoBehaviour
 
 		dialogueText.text = "The fight against " + enemyUnit.unitName + " begins...";
 
-		playerHUD.SetHUD(playerUnit);
-		enemyHUD.SetHUD(enemyUnit);
+		playerHud.SetHud(playerUnit);
+		enemyHud.SetHud(enemyUnit);
 
 		yield return new WaitForSeconds(2f);
 
@@ -59,7 +63,7 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
-	
+	// Player can start fight
 	void PlayerTurn()
 	{
 		dialogueText.text = "Choose an action...";
@@ -67,18 +71,19 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
+	// Fightmenu Selector Update Method
 	private void Update(){
 		if(state == BattleState.PLAYERTURN){
 			HandleActionSelection();
 		}
 	}
 
-	
+	// Fightmenu Selector Controller AND Run Code
 	void HandleActionSelection(){
-		if(Input.GetKeyDown(KeyCode.W)){
+		if(Input.GetKeyDown(KeyCode.S)){
 			if(currentAction < 1)
 			++currentAction;
-		} else if(Input.GetKeyDown(KeyCode.D)){
+		} else if(Input.GetKeyDown(KeyCode.W)){
 			if(currentAction > 0)
 			--currentAction;
 		}
@@ -90,26 +95,18 @@ public class BattleSystem : MonoBehaviour
 				// fight
 				if (state != BattleState.PLAYERTURN)
 					return;
-
-				StartCoroutine(PlayerAttack());
+					StartCoroutine(PlayerAttack());
 			} else if(currentAction == 1){
-				
-				//
-				//
-				//
-				//run
-				//
-				//
-				//
-				//
-				
-				
+				// run
+				loadNew.sceneToLoad = "Maze";
+				loadNew.LoadArea();				
 			}
 			
 		}
 		
 	}
 
+	// Fightmenu GUI highlighter
 	void UpdateActionSelection(int selectedAction){
 		for(int i = 0;i<actionText.Count; ++i){
 			if(i == selectedAction){
@@ -120,11 +117,11 @@ public class BattleSystem : MonoBehaviour
 		}
 	}
 	
-	IEnumerator PlayerAttack()
-	{
+	// Playerattack controller
+	IEnumerator PlayerAttack(){
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
-		enemyHUD.SetHP(enemyUnit.currentHP);
+		enemyHud.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack is successful!";
 
 		yield return new WaitForSeconds(2f);
@@ -133,6 +130,7 @@ public class BattleSystem : MonoBehaviour
 		{
 			state = BattleState.WON;
 			EndBattle();
+			
 		} else
 		{
 			state = BattleState.ENEMYTURN;
@@ -140,15 +138,20 @@ public class BattleSystem : MonoBehaviour
 		}
 	}
 	
-	IEnumerator EnemyTurn()
-	{
+	public void EnemyDieController(){
+		Debug.Log(BattleSystem.currentEnemy);
+			Enemy.deadEnemies.Add(BattleSystem.currentEnemy);
+	}
+	
+	// Enemyturn
+	IEnumerator EnemyTurn(){
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
-		playerHUD.SetHP(playerUnit.currentHP);
+		playerHud.SetHP(playerUnit.currentHP);
 
 		yield return new WaitForSeconds(1f);
 
@@ -164,6 +167,7 @@ public class BattleSystem : MonoBehaviour
 
 	}
 	
+	// End of the Battle
 	void EndBattle()
 	{
 		if(state == BattleState.WON)
@@ -174,6 +178,12 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You were defeated.";
 		}
 		
+		EnemyDieController();
+
+		loadNew.sceneToLoad = "Maze";
+		loadNew.LoadArea();
+		
+		//
 		//
 		//
 		// Ende

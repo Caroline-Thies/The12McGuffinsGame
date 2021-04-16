@@ -10,7 +10,6 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public class BattleSystem : MonoBehaviour
 {
 	LoadNewArea loadNew;
-	DestroyEnemy killEnemy;
 	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
@@ -24,8 +23,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] List<Text> actionText;
 	[SerializeField] Color highlightedColor;
 	
-	public BattleHUD playerHUD;
-	public BattleHUD enemyHUD;
+	public BattleHud playerHud;
+	public BattleHud enemyHud;
 
 	Unit playerUnit;
 	Unit enemyUnit;
@@ -54,8 +53,8 @@ public class BattleSystem : MonoBehaviour
 
 		dialogueText.text = "The fight against " + enemyUnit.unitName + " begins...";
 
-		playerHUD.SetHUD(playerUnit);
-		enemyHUD.SetHUD(enemyUnit);
+		playerHud.SetHud(playerUnit);
+		enemyHud.SetHud(enemyUnit);
 
 		yield return new WaitForSeconds(2f);
 
@@ -122,7 +121,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator PlayerAttack(){
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
-		enemyHUD.SetHP(enemyUnit.currentHP);
+		enemyHud.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack is successful!";
 
 		yield return new WaitForSeconds(2f);
@@ -140,7 +139,8 @@ public class BattleSystem : MonoBehaviour
 	}
 	
 	public void EnemyDieController(){
-			DestroyEnemy.deadEnemies.Add(BattleSystem.currentEnemy);
+		Debug.Log(BattleSystem.currentEnemy);
+			Enemy.deadEnemies.Add(BattleSystem.currentEnemy);
 	}
 	
 	// Enemyturn
@@ -151,7 +151,7 @@ public class BattleSystem : MonoBehaviour
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
-		playerHUD.SetHP(playerUnit.currentHP);
+		playerHud.SetHP(playerUnit.currentHP);
 
 		yield return new WaitForSeconds(1f);
 

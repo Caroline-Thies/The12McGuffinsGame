@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 		} else {
 			Destroy(gameObject);
 		}
+		
+		
 	}
 
 	public InputManager getInputManager(){

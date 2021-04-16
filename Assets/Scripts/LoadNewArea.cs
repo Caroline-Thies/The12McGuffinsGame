@@ -13,10 +13,6 @@ public class LoadNewArea : MonoBehaviour
 	
 	public void OnTriggerEnter2D(Collider2D other){
        if(other.gameObject.CompareTag("Player")){
-		    DestroyEnemy enemyDestory = gameObject.GetComponent<DestroyEnemy>();
-			if(enemyDestory != null){
-				BattleSystem.currentEnemy = enemyDestory.getEnemyID();
-			}
 			Application.LoadLevel(sceneToLoad);
         }
 	}

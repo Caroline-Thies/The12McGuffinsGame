@@ -174,4 +174,4 @@ MonoBehaviour:
   armor: {fileID: 11400000, guid: 2eb2f0817218a40e3b5ee4dbdc528f3b, type: 2}
   damage: 10
   maxHP: 50
-  currentHP: 45
+  currentHP: 10

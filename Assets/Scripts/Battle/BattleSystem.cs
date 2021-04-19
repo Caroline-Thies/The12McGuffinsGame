@@ -33,6 +33,7 @@ public class BattleSystem : MonoBehaviour
 	
 	int currentAction;
 	public static string currentEnemy;
+	public bool enemyAttackEnds = true;
 
     // Start is called before the first frame update
     void Start()
@@ -93,9 +94,12 @@ public class BattleSystem : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.E)){
 			if(currentAction == 0){
 				// fight
-				if (state != BattleState.PLAYERTURN)
+				if (state != BattleState.PLAYERTURN){
 					return;
+					enemyAttackEnds = false;
 					StartCoroutine(PlayerAttack());
+				} 
+
 			} else if(currentAction == 1){
 				// run
 				loadNew.sceneToLoad = "Maze";
@@ -163,6 +167,7 @@ public class BattleSystem : MonoBehaviour
 		} else
 		{
 			state = BattleState.PLAYERTURN;
+			enemyAttackEnds = true;
 			PlayerTurn();
 		}
 
@@ -185,7 +190,7 @@ public class BattleSystem : MonoBehaviour
 		loadNew.LoadArea();
 		
 		//
-		//
+		//-888888888888888888888888888888888
 		//
 		// Ende
 		//

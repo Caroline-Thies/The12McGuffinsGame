@@ -23,18 +23,21 @@ public class ConditionalTilemap : MonoBehaviour
         bool show = true;
         for(int i = 0; i < eventsCount; i++){
             bool triggered = keyEventManager.isEventTriggered(eventsToCheck[i]);
+            Debug.Log("will check event " + eventsToCheck[i]);
             if (i < eventBoolsCount){ //this is to prevent crashing if the boolList is shorter than the eventList
-                show = triggered && showIfEventTriggered[i];
+                show = triggered == showIfEventTriggered[i];
             } else {
                 show = triggered;
             }
+            Debug.Log("show set to " + show);
         }
         return show;
     }
     private void setLayer(bool shown){
+        Debug.Log("will show layer: " + shown);
         TilemapRenderer tilemapRenderer = this.GetComponent<TilemapRenderer>();
         if(!shown){
-            tilemapRenderer.sortingOrder = 0;
+            tilemapRenderer.sortingOrder = -1;
         } else {
             tilemapRenderer.sortingOrder = targetLayer;
         }

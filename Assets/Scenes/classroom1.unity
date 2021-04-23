@@ -383,6 +383,50 @@ MonoBehaviour:
   conditionalEvent: COLLAGE_IN_VOID
   ifTriggered: {fileID: 76549264}
   ifNotTriggered: {fileID: 76549264}
+--- !u!114 &76549266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IS_BACK
+--- !u!114 &76549267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IS_BACK
+  ifTriggered: {fileID: 76549268}
+  ifNotTriggered: {fileID: 76549264}
+--- !u!114 &76549268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Geraldine
+    sentences:
+    - You are lucky again. Nevertheless, you are suspended for today. Go home.
 --- !u!1 &306477822
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +683,6 @@ MonoBehaviour:
     name: Liam
     sentences:
     - "Ohh! Very nice. Finally some action in this boring school. \u291C(\u25D4\u203F\u25D4)\u290F"
-    - 
 --- !u!114 &407494812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +711,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: COLLAGE_IN_VOID
+--- !u!114 &407494814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Liam
+    sentences:
+    - 'You bore. Finally something is going on here and you undo it. '
+--- !u!114 &407494815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IS_BACK
+  ifTriggered: {fileID: 407494814}
+  ifNotTriggered: {fileID: 407494811}
+--- !u!114 &407494816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IS_BACK
 --- !u!1 &557598245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1529,50 @@ MonoBehaviour:
   conditionalEvent: COLLAGE_IN_VOID
   ifTriggered: {fileID: 656127794}
   ifNotTriggered: {fileID: 656127792}
+--- !u!114 &656127796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IS_BACK
+--- !u!114 &656127797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Gabriel
+    sentences:
+    - Is it over? Don't flatter yourself, kid.. Bye!
+--- !u!114 &656127798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IS_BACK
+  ifTriggered: {fileID: 656127797}
+  ifNotTriggered: {fileID: 656127794}
 --- !u!1001 &676200804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1674,6 +1805,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: COLLAGE_IN_VOID
+--- !u!114 &676200810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Noah
+    sentences:
+    - Are we back? I was almost done! Nooo.
+--- !u!114 &676200811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IS_BACK
+  ifTriggered: {fileID: 676200807}
+  ifNotTriggered: {fileID: 676200810}
+--- !u!114 &676200812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IS_BACK
 --- !u!1 &716388196
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,6 +3509,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: COLLAGE_IN_VOID
+--- !u!114 &951456479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IS_BACK
+--- !u!114 &951456480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: James
+    sentences:
+    - Finally I can go home. Never do that again!
+--- !u!114 &951456481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IS_BACK
+  ifTriggered: {fileID: 951456480}
+  ifNotTriggered: {fileID: 951456476}
 --- !u!1001 &1199849084
 PrefabInstance:
   m_ObjectHideFlags: 0

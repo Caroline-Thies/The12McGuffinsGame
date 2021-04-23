@@ -744,6 +744,7 @@ MonoBehaviour:
   playerHud: {fileID: 1481743864}
   enemyHud: {fileID: 1025731084}
   state: 0
+  enemyAttackEnds: 1
 --- !u!114 &429966893
 MonoBehaviour:
   m_ObjectHideFlags: 0

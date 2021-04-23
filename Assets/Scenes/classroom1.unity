@@ -185,6 +185,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 76549265}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 76549263}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -292,6 +332,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &76549262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 76549261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &76549263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
+--- !u!114 &76549264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Geraldine
+    sentences:
+    - Such a shitty day and you teleport the whole school into the void.
+    - Fix this or get kicked out of school!
+--- !u!114 &76549265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76549262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 76549264}
+  ifNotTriggered: {fileID: 76549264}
 --- !u!1 &306477822
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +447,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 407494813}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 407494812}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -465,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: I really wish something bad happens to this place.
+      value: "I really wish something bad happens to this place. \u291C(\u25D4\u203F\u25D4)\u290F"
       objectReference: {fileID: 0}
     - target: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
@@ -474,6 +605,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &407494809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 407494808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &407494810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 407494808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &407494811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Liam
+    sentences:
+    - "Ohh! Very nice. Finally some action in this boring school. \u291C(\u25D4\u203F\u25D4)\u290F"
+    - 
+--- !u!114 &407494812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 407494811}
+  ifNotTriggered: {fileID: 407494810}
+--- !u!114 &407494813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407494809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
 --- !u!1 &557598245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1215,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 656127795}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 656127793}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -1145,6 +1379,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &656127791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 656127790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &656127792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 656127790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &656127793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
+--- !u!114 &656127794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Gabriel
+    sentences:
+    - Geraldine, this stupid guy has ruined us all. Say something!
+    - "Pff! The arrogant cow. Fuck off man. ( \u0360\xB0 \u035F\u0296 \u0361\xB0)"
+--- !u!114 &656127795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656127791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 656127794}
+  ifNotTriggered: {fileID: 656127792}
 --- !u!1001 &676200804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1152,6 +1449,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 676200808}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 676200809}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -1275,6 +1612,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &676200805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 676200804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &676200806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 676200804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &676200807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Noah
+    sentences:
+    - Leave me alone! I am already building the Noah's ark.
+--- !u!114 &676200808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 676200807}
+  ifNotTriggered: {fileID: 676200806}
+--- !u!114 &676200809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676200805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
 --- !u!1 &716388196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +3108,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 951456477}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 951456478}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -2832,6 +3271,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &951456474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 951456473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &951456475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 951456473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &951456476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: James
+    sentences:
+    - Huch, what the fuck. What have you done??
+    - I want to go home. Maaaammmaaa! :(
+--- !u!114 &951456477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 951456476}
+  ifNotTriggered: {fileID: 951456475}
+--- !u!114 &951456478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951456474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
 --- !u!1001 &1199849084
 PrefabInstance:
   m_ObjectHideFlags: 0

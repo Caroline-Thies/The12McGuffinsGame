@@ -23,8 +23,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] List<Text> actionText;
 	[SerializeField] Color highlightedColor;
 	
-	public BattleHUD playerHud;
-	public BattleHUD enemyHud;
+	public BattleHud playerHud;
+	public BattleHud enemyHud;
 
 	Unit playerUnit;
 	Unit enemyUnit;
@@ -33,6 +33,7 @@ public class BattleSystem : MonoBehaviour
 	
 	int currentAction;
 	public static string currentEnemy;
+	public bool enemyAttackEnds = true;
 
     // Start is called before the first frame update
     void Start()
@@ -91,11 +92,14 @@ public class BattleSystem : MonoBehaviour
 		UpdateActionSelection(currentAction);
 		
 		if(Input.GetKeyDown(KeyCode.E)){
-			if(currentAction == 0){
+			if(currentAction == 0 && enemyAttackEnds == true){
 				// fight
-				if (state != BattleState.PLAYERTURN)
+				if (state != BattleState.PLAYERTURN){
 					return;
-					StartCoroutine(PlayerAttack());
+				} 
+				actionSelector.SetActive(false);
+				enemyAttackEnds = false;
+				StartCoroutine(PlayerAttack());
 			} else if(currentAction == 1){
 				// run
 				loadNew.sceneToLoad = "Maze";
@@ -130,6 +134,7 @@ public class BattleSystem : MonoBehaviour
 		if(isDead)
 		{
 			state = BattleState.WON;
+			EnemyDieController();
 			EndBattle();
 			
 		} else
@@ -154,7 +159,7 @@ public class BattleSystem : MonoBehaviour
 
 		playerHud.SetHP(playerUnit.currentHP);
 
-		yield return new WaitForSeconds(1f);
+		// yield return new WaitForSeconds(1f);
 
 		if(isDead)
 		{
@@ -163,6 +168,7 @@ public class BattleSystem : MonoBehaviour
 		} else
 		{
 			state = BattleState.PLAYERTURN;
+			enemyAttackEnds = true;
 			PlayerTurn();
 		}
 
@@ -179,13 +185,13 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You were defeated.";
 		}
 		
-		EnemyDieController();
+
 
 		loadNew.sceneToLoad = "Maze";
 		loadNew.LoadArea();
 		
 		//
-		//
+		//-888888888888888888888888888888888
 		//
 		// Ende
 		//

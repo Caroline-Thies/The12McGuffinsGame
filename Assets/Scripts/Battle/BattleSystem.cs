@@ -1,206 +1,352 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
-
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+enum State {
+	Begin,
+	NextEnemy,
+	PlayerSelectAction,
+	PlayerSelectsWeapon,
+	EnemyAttacks,
+	PlayerWon,
+	PlayerLost,
+};
 
 public class BattleSystem : MonoBehaviour
 {
-	LoadNewArea loadNew;
-	
-	public GameObject playerPrefab;
-	public GameObject enemyPrefab;
+	public static BattleInfo currentBattle;
 
-	public Transform playerBattleStation;
-	public Transform enemyBattleStation;
-
+	[Header("Selection Dialogue")]
 	public Text dialogueText;
+	public GameObject scrollContent;
+	public GameObject selectionItemPrefab;
+	public Color highlightedColor;
 
-	[SerializeField] GameObject actionSelector;
-	[SerializeField] List<Text> actionText;
-	[SerializeField] Color highlightedColor;
+	[Header("HUD")]
+	public Image enemySprite;
+	public Text enemyNameText;
+	public Slider playerHealthSlider;
+	public Slider enemyHealthSlider;
+
+	private Dictionary<Weapon, uint> weaponUsages = new Dictionary<Weapon, uint>();
 	
-	public BattleHud playerHud;
-	public BattleHud enemyHud;
+	private State currentState = State.Begin;
+	private State? stateLastFrame = null;
 
-	Unit playerUnit;
-	Unit enemyUnit;
+	private UnitInstance currentUnit = null;
+	private float playerHealth = 100f;
 
-	public BattleState state;
-	
-	int currentAction;
-	public static string currentEnemy;
-	public bool enemyAttackEnds = true;
+	private DialogueContent currentDialogue = null;
 
-    // Start is called before the first frame update
+	class SelectionEvent : UnityEvent<int> {}
+
+	class DialogueContent {
+		public SelectionEvent selectionEvent;
+		public int index = 0;
+		public List<string> values;
+		public string text;
+		
+		public DialogueContent(string text, List<string> values) {
+			this.selectionEvent = values == null ? null : new SelectionEvent();
+			this.text = text;
+			this.values = values;
+		}
+	}
+
     void Start()
     {
-		loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
-		state = BattleState.START;
-		StartCoroutine(SetupBattle());
+		InventoryManager invManager = FindObjectOfType<InventoryManager>();
+
+		// Find all items the player may use for the fight
+		List<InventoryItem> availableWeapons = invManager.items.FindAll(item => {
+			return item.tag == "weapon" && invManager.HasItem(item.identifier);
+		});
+
+		if (availableWeapons.Count == 0) {
+			throw new Exception("The player doesn't have a weapon in their inventory. This should not happen.");
+		}
+
+		// Initialize the maximum usages for all available weapons
+		availableWeapons.ForEach(item => {
+			Weapon weapon = (Weapon) item;
+			weaponUsages.Add(weapon, weapon.numberOfUsesPerFight);
+		});
     }
 
-	// Create Setup Battle
-	IEnumerator SetupBattle()
-	{
-		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-		playerUnit = playerGO.GetComponent<Unit>();
+	private void Update() {
+		HandleDialogueInput();
 
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-		enemyUnit = enemyGO.GetComponent<Unit>();
-
-		dialogueText.text = "The fight against " + enemyUnit.unitName + " begins...";
-
-		playerHud.SetHud(playerUnit);
-		enemyHud.SetHud(enemyUnit);
-
-		yield return new WaitForSeconds(2f);
-
-		state = BattleState.PLAYERTURN;
-		PlayerTurn();
-
-	}
-
-	// Player can start fight
-	void PlayerTurn()
-	{
-		dialogueText.text = "Choose an action...";
-		actionSelector.SetActive(enabled);
-
-	}
-
-	// Fightmenu Selector Update Method
-	private void Update(){
-		if(state == BattleState.PLAYERTURN){
-			HandleActionSelection();
+		// This ensures that our transition code only gets run
+		// for a single frame after the state has changed.
+		if (currentState != stateLastFrame) {
+			stateLastFrame = currentState;
+			OnStateChange();
 		}
 	}
 
-	// Fightmenu Selector Controller AND Run Code
-	void HandleActionSelection(){
-		if(Input.GetKeyDown(KeyCode.S)){
-			if(currentAction < 1)
-			++currentAction;
-		} else if(Input.GetKeyDown(KeyCode.W)){
-			if(currentAction > 0)
-			--currentAction;
-		}
-		
-		UpdateActionSelection(currentAction);
-		
-		if(Input.GetKeyDown(KeyCode.E)){
-			if(currentAction == 0 && enemyAttackEnds == true){
-				// fight
-				if (state != BattleState.PLAYERTURN){
-					return;
-				} 
-				actionSelector.SetActive(false);
-				enemyAttackEnds = false;
-				StartCoroutine(PlayerAttack());
-			} else if(currentAction == 1){
-				// run
-				loadNew.sceneToLoad = "Maze";
-				loadNew.LoadArea();				
+	private void OnStateChange() {
+		switch (currentState) {
+			case State.Begin: {
+				currentState = State.NextEnemy;
+				break;
 			}
-			
-		}
-		
-	}
 
-	// Fightmenu GUI highlighter
-	void UpdateActionSelection(int selectedAction){
-		for(int i = 0;i<actionText.Count; ++i){
-			if(i == selectedAction){
-				actionText[i].color = highlightedColor;
-			} else {
-				actionText[i].color = Color.black;
+			case State.NextEnemy: {
+				Unit nextUnit = currentBattle.NextUnit();
+
+				if (nextUnit == null) {
+					currentBattle.MarkAllEnemiesAsDead();
+					currentState = State.PlayerWon;
+				} else {
+					currentUnit = new UnitInstance(nextUnit);
+					currentState = State.PlayerSelectAction;
+					UpdateHUD();
+				}
+
+				break;
+			}
+
+			case State.PlayerSelectAction: {
+				List<string> options = new List<string>();
+				options.Add("Fight");
+				options.Add("Run");
+
+				SetDialogueContent("What do you want to do?", options).AddListener(index => {
+					if (index == 1) {
+						currentState = State.PlayerLost;
+					} else {
+						currentState = State.PlayerSelectsWeapon;
+					}
+				});
+
+				break;
+			}
+
+			case State.PlayerSelectsWeapon: {
+				List<string> names = new List<string>();
+				List<Weapon> selectableWeapons = new List<Weapon>();
+
+				foreach (KeyValuePair<Weapon, uint> entry in weaponUsages) {
+					Weapon weapon = entry.Key;
+					uint usages = entry.Value;
+
+					if (usages > 0) {
+						string text = string.Format("{0} ({1})", weapon.name, usages);
+						names.Add(text);
+						selectableWeapons.Add(weapon);
+					}
+				}
+
+				SetDialogueContent("Select a weapon", names).AddListener(index => {
+					Weapon selectedWeapon = selectableWeapons[index];
+
+					if (PlayerAttacksWithWeapon(selectedWeapon)) {
+						string message = String.Format("'{0}' was killed", currentUnit.unit.name);
+						SetDialogueContent(message, null);
+						SetStateDelayed(State.NextEnemy, 1.2f);
+					} else {
+						currentState = State.EnemyAttacks;
+					}
+				});
+
+				break;
+			}
+
+			case State.EnemyAttacks: {
+				SetDialogueContent("The enemy attacks...", null);
+				StartCoroutine(OnEnemyAttack());
+				break;
+			}
+
+			case State.PlayerWon: {
+				List<string> options = new List<string>();
+				options.Add("Continue");
+
+				SetDialogueContent("Congratulations! you won the battle", options).AddListener(_ => {
+					ReturnToPreviousScene();
+				});
+
+				break;
+			}
+
+			case State.PlayerLost: {
+				List<string> options = new List<string>();
+				options.Add("Continue");
+
+				SetDialogueContent("Damn, looks like you lost. Tough luck", options).AddListener(_ => {
+					ReturnToPreviousScene();
+				});
+
+				break;
 			}
 		}
 	}
-	
-	// Playerattack controller
-	IEnumerator PlayerAttack()
-	{
-		bool isDead = enemyUnit.TakeDamage(playerUnit.weapon);
 
-		enemyHud.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+	// We need to call this as a coroutine to add some delay
+	private IEnumerator OnEnemyAttack() {
+		yield return new WaitForSeconds(0.8f); 
 
-		yield return new WaitForSeconds(2f);
-
-		if(isDead)
-		{
-			state = BattleState.WON;
-			EnemyDieController();
-			EndBattle();
-			
-		} else
-		{
-			state = BattleState.ENEMYTURN;
-			StartCoroutine(EnemyTurn());
+		if (PlayerTakesDamage(currentUnit.unit)) {
+			currentState = State.PlayerLost;
+		} else {
+			SetStateDelayed(State.PlayerSelectAction, 1.2f);
 		}
 	}
-	
-	public void EnemyDieController(){
-		Debug.Log(BattleSystem.currentEnemy);
-			Enemy.deadEnemies.Add(BattleSystem.currentEnemy);
+
+	private bool PlayerTakesDamage(Unit fromUnit) {
+		Armor armor = new Armor();
+		armor.bluntMultiplier = 1;
+		armor.piercingMultiplier = 1;
+
+		playerHealth -= fromUnit.weapon.calculateDamageGiven(armor);
+		UpdateHUD();
+
+		return playerHealth <= 0;
 	}
-	
-	// Enemyturn
-	IEnumerator EnemyTurn(){
-		dialogueText.text = enemyUnit.unitName + " attacks!";
 
-		yield return new WaitForSeconds(1f);
+	// Applies damage from the given weapon to the current unit.
+	// Returns true if the enemy was killed by the attack.
+	private bool PlayerAttacksWithWeapon(Weapon weapon) {
+		uint currentUsages;
 
-		bool isDead = playerUnit.TakeDamage(enemyUnit.weapon);
+		if (weaponUsages.TryGetValue(weapon, out currentUsages)) {
+			weaponUsages[weapon] = currentUsages > 0 ? currentUsages - 1 : 0;
 
-		playerHud.SetHP(playerUnit.currentHP);
+			currentUnit.TakeDamage(weapon);
+			UpdateHUD();
 
-		// yield return new WaitForSeconds(1f);
-
-		if(isDead)
-		{
-			state = BattleState.LOST;
-			EndBattle();
-		} else
-		{
-			state = BattleState.PLAYERTURN;
-			enemyAttackEnds = true;
-			PlayerTurn();
+			return currentUnit.health <= 0;
 		}
 
+		return false;
 	}
-	
-	// End of the Battle
-	void EndBattle()
-	{
-		if(state == BattleState.WON)
-		{
-			dialogueText.text = "You won the battle!";
-		} else if (state == BattleState.LOST)
-		{
-			dialogueText.text = "You were defeated.";
+
+	private void HandleDialogueInput() {
+		if (currentDialogue == null || currentDialogue.selectionEvent == null) {
+			return;
 		}
-		
 
+		int index = currentDialogue.index;
 
-		loadNew.sceneToLoad = "Maze";
-		loadNew.LoadArea();
-		
-		//
-		//-888888888888888888888888888888888
-		//
-		// Ende
-		//
-		//
-		//
+		if (Input.GetKeyDown(KeyCode.S)) {
+			currentDialogue.index = Math.Min(index + 1, currentDialogue.values.Count - 1);	
+			RenderDialogue(currentDialogue);
+		} else if (Input.GetKeyDown(KeyCode.W)) {
+			currentDialogue.index = Math.Max(0, index - 1);
+			RenderDialogue(currentDialogue);
+		} else if (Input.GetKeyDown(KeyCode.E)) {
+			SelectionEvent ev = currentDialogue.selectionEvent;
+			currentDialogue = null;
+			ev.Invoke(index);
+		}
+	}
+
+	private void UpdateHUD() {
+		playerHealthSlider.maxValue = 100.0f;
+		playerHealthSlider.value = Mathf.Max(0.0f, playerHealth);
+
+		enemyHealthSlider.maxValue = currentUnit.unit.maxHealth;
+		enemyHealthSlider.value = Mathf.Max(0.0f, currentUnit.health);
+
+		enemyNameText.text = currentUnit.unit.name;
+		enemySprite.sprite = currentUnit.unit.battleSprite;
+	}
+
+	private SelectionEvent SetDialogueContent(string text, List<string> selectionValues) {
+		currentDialogue = new DialogueContent(text, selectionValues);
+		RenderDialogue(currentDialogue);
+		return currentDialogue.selectionEvent;
+	}
+
+	// Render the given DialogueContent instance onto the canvas.
+	// Beware: This method does not care about the currently active
+	//		   dialogue _at all_. It could lead to some weird bugs
+	//		   if you call it outside of SetDialogueContent.
+	private void RenderDialogue(DialogueContent content) {
+		dialogueText.text = content.text;
+
+		// If the caller did not specify any selection options we don't need
+		// to do anything. In fact, we probably even want to hide the
+		// scroll view.
+		bool hasSelection = content.values != null && content.values.Count > 0;
+		Text[] textChildArray = scrollContent.GetComponentsInChildren<Text>();
+
+		if (hasSelection) {
+			List<Text> children = new List<Text>(textChildArray);
+
+			// These two if branches make sure that we have the exact amount
+			// of text entries needed to accomodate all selection options
+			if (children.Count < content.values.Count) {
+				int missing = content.values.Count - children.Count;
+
+				for (int i = 0; i < missing; i++) {
+					GameObject inst = Instantiate(selectionItemPrefab);
+					inst.transform.SetParent(scrollContent.transform, false);
+					children.Add(inst.GetComponent<Text>());
+				}
+			} else if (children.Count > content.values.Count) {
+				int tooMany = children.Count - content.values.Count;
+
+				for (int i = 0; i < tooMany; i++) {
+					// We need to remove from top to bottom, otherwise
+					// the entries shift and we remove the wrong ones
+					int index = children.Count - 1 - i;
+					Destroy(children[index].gameObject);
+					children.Remove(children[index]);
+				}
+			}
+
+			int itemsPerPage = 2;
+			int activePage = content.index / itemsPerPage;
+
+			// Set text and color for all text entries
+			for (int i = 0; i < children.Count; i++) {
+				Text child = children[i];
+				int page = i / itemsPerPage;
+
+				if (page == activePage) {
+					child.enabled = true;
+					child.text = content.values[i];
+					child.color = content.index == i ? highlightedColor : Color.black;
+				} else {
+					child.enabled = false;
+				}
+
+				if (content.index == i) {
+					RectTransform scrollTransform = (RectTransform) scrollContent.transform;
+					Vector2 scrollPosition = scrollTransform.anchoredPosition;
+
+					// We make the assumption that all menu items have the same height
+					RectTransform childTransform = (RectTransform) child.transform;
+					scrollPosition.y = childTransform.rect.height * activePage * itemsPerPage;
+
+					scrollTransform.anchoredPosition = scrollPosition;
+				}
+			}
+		} else {
+			foreach (Text child in textChildArray) {
+				Destroy(child.gameObject);
+			}
+		}
+	}
+
+	private void SetStateDelayed(State targetState, float delay) {
+		StartCoroutine(SetStateDelayedInternal(targetState, delay));
+	}
+
+	private IEnumerator SetStateDelayedInternal(State targetState, float delay) {
+		yield return new WaitForSeconds(delay);
+		currentState = targetState;
 	}
 	
-	
-	
-	
+	private void ReturnToPreviousScene() {
+		LoadNewArea loadArea = gameObject.AddComponent<LoadNewArea>();
+		loadArea.sceneToLoad = currentBattle.comingFromScene;
+		loadArea.LoadArea();
+	}
+
 }
 

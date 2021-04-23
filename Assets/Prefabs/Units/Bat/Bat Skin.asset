@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c826700e4b7114189a32016e8e801107, type: 3}
-  m_Name: Wayback Machine
+  m_Script: {fileID: 11500000, guid: 715eeb04be52d4b7d9c11df03fa1ae85, type: 3}
+  m_Name: Bat Skin
   m_EditorClassIdentifier: 
-  identifier: wayback-machine
-  sprite: {fileID: 21300000, guid: ea4145272473c460fac7c46e9cc9a2ba, type: 3}
-  hiddenSprite: {fileID: 21300000, guid: 9a5428736847342f0a20b1887026875d, type: 3}
+  identifier: 
+  tag: armor
+  sprite: {fileID: 0}
+  hiddenSprite: {fileID: 0}
+  bluntMultiplier: 4.51
+  piercingMultiplier: 1

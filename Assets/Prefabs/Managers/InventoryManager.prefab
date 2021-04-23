@@ -6438,7 +6438,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e7ec61a62af84bddbfee97a65ad5542, type: 2}
   - {fileID: 11400000, guid: 335e43779bdfa42ceaf746697f4d829b, type: 2}
   - {fileID: 11400000, guid: deab2b727b51744f2bbe539219f5db5b, type: 2}
-  - {fileID: 11400000, guid: 2eb2f0817218a40e3b5ee4dbdc528f3b, type: 2}
+  - {fileID: 11400000, guid: 5fb06a394421a47ad9fa5b6f3e318d54, type: 2}
+  - {fileID: 11400000, guid: b62130bae3e2047bdb6bdfd712b354cc, type: 2}
   canvas: {fileID: 7983391483034837116}
   slotContainer: {fileID: 6477188057806394638}
   itemSlotPrefab: {fileID: 1596857544011606312, guid: 82dfc2d7cbb6f4f38a355c4a611068e0,

@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionalEvent: MCGUFFIN_FOUND
-  ifTriggered: {fileID: 0}
+  ifTriggered: {fileID: 650600027055780878}
   ifNotTriggered: {fileID: 650600027055780876}
 --- !u!114 &650600027055780878
 MonoBehaviour:
@@ -2829,6 +2829,20 @@ MonoBehaviour:
     sentences:
     - Congratulations, you saved the university. Now everyone is slightly less mad
       at you.
+--- !u!114 &650600027055780879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650600027055780875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cb31e9887b42347a3ad0c1356e6f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLEGE_TELEPORTED_BACK
+  conditionEvent: MCGUFFIN_FOUND
 --- !u!1001 &6431791380581817949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2836,6 +2850,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2855,6 +2874,31 @@ PrefabInstance:
         type: 3}
       propertyPath: interactKey
       value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 650600027055780879}
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerConditionalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399498174686825605, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5784088025600059988, guid: 3ada54d1ab582a947aa1a9836edf8a7f,
         type: 3}

@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+[CreateAssetMenu(menuName="Enemy Unit", fileName="New Enemy Unit")]
+public class Unit : ScriptableObject
 {
-	
-	public string unitName;
+	[Header("Appearance")]
+	public Sprite sprite;
+	public Sprite battleSprite;
 
-	public int damage;
-
-	public int maxHP;
-	public int currentHP;
-	
-	public bool TakeDamage(int dmg)
-	{
-		currentHP -= dmg;
-
-		if (currentHP <= 0)
-			return true;
-		else
-			return false;
-	}
-	
+	[Header("Stats")]
+	public Weapon weapon;
+	public Armor armor;
+	public float maxHealth = 100.0f;
 }

@@ -54,10 +54,16 @@ public class InputManager : MonoBehaviour
             return new Vector2(0, 0);
         }
 
-        return new Vector2(
+        Vector2 movement = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
+
+        // We need to normalize this vector, otherwise
+        // the player moves faster diagonally.
+        movement.Normalize();
+
+        return movement;
     }
 
     public bool GetKeyDown(UnityEngine.KeyCode name) {

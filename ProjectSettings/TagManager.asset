@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - EnemyIsDead
+  - Monster1
+  - Monster2
+  - Monster3
   layers:
   - Default
   - TransparentFX

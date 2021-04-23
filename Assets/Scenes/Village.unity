@@ -371,6 +371,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &561181881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 561181880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &561181882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 561181880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561181881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &561181883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561181881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
+--- !u!114 &561181884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561181881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Timmy
+    sentences:
+    - 'Where are my candies? '
+--- !u!114 &561181885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561181881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 561181884}
+  ifNotTriggered: {fileID: 561181882}
 --- !u!1 &674807166
 GameObject:
   m_ObjectHideFlags: 0
@@ -46802,6 +46864,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1610007300}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: triggerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1610007301}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: triggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898582409128061662, guid: 7e48b84714e236946a1da2dcc6d0d481,
+        type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
         type: 3}
       propertyPath: m_Name
@@ -46895,6 +46997,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e48b84714e236946a1da2dcc6d0d481, type: 3}
+--- !u!1 &1610007298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4794066569683330515, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1610007297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610007299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610007298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Charlotte
+    sentences:
+    - Oh, what happened? Was that an earthquake?
+--- !u!114 &1610007300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610007298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd047b5d4e0db48b9510597f57bea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionalEvent: COLLAGE_IN_VOID
+  ifTriggered: {fileID: 1610007299}
+  ifNotTriggered: {fileID: 1610007302}
+--- !u!114 &1610007301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610007298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b85e24890540e43b1124d452281e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: COLLAGE_IN_VOID
+--- !u!114 &1610007302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6840031672268387363, guid: 7e48b84714e236946a1da2dcc6d0d481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1610007297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610007298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ea691dd17283442a91f282c9a6c090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808305347
 GameObject:
   m_ObjectHideFlags: 0

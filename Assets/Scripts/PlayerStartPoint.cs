@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class PlayerStartPoint : MonoBehaviour
 {
     private PlayerController player;
-    private CameraController camera;
+    private CameraController cam;
     // Start is called before the first frame update
     void Start()
     {
         checkLastPlayerLocation();
         player = FindObjectOfType<PlayerController>();
         player.transform.position = transform.position;
-        camera = FindObjectOfType<CameraController>();
-        camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z); //this is necessary as to keep the camera's z position. Otherwise weird behaviour
+        cam = FindObjectOfType<CameraController>();
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, GetComponent<Camera>().transform.position.z); //this is necessary as to keep the camera's z position. Otherwise weird behaviour
     }
 
     private void checkLastPlayerLocation(){

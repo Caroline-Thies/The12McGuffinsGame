@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d13314089302a7a40b8840e9235918b0
+  - enabled: 1
     path: Assets/Scenes/Bedroom.unity
     guid: d772bd2a53a925047b9e214f7102aa24
   - enabled: 1
@@ -29,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleArea.unity
     guid: fc6f2b9352056b5498c9c1e4569df1f6
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d13314089302a7a40b8840e9235918b0
   - enabled: 1
     path: Assets/Scenes/CollegeCourt.unity
     guid: 41528a53d0d3376438d8e5b0a906912d

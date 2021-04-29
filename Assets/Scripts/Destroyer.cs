@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    [SerializeField] private float lifeTimer;
+    [SerializeField] private float lifeTimer = 0;
 	
 	private void Start()
 	{

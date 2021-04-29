@@ -9,7 +9,7 @@ public class LoadNewArea : MonoBehaviour
 	
     public void LoadArea(){
         movePlayerStartPoint();
-        Application.LoadLevel(sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
     }
 	
 	public void OnTriggerEnter2D(Collider2D other){

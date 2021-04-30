@@ -177,7 +177,7 @@ public class BattleSystem : MonoBehaviour
 				options.Add("Continue");
 
 				SetDialogueContent("Damn, looks like you lost. Tough luck", options).AddListener(_ => {
-					ReturnToPreviousScene();
+					ReturnToBedroom();
 				});
 
 				break;
@@ -341,10 +341,16 @@ public class BattleSystem : MonoBehaviour
 		yield return new WaitForSeconds(delay);
 		currentState = targetState;
 	}
-	
+
 	private void ReturnToPreviousScene() {
 		LoadNewArea loadArea = gameObject.AddComponent<LoadNewArea>();
 		loadArea.sceneToLoad = currentBattle.comingFromScene;
+		loadArea.LoadArea();
+	}
+
+	private void ReturnToBedroom() {
+		LoadNewArea loadArea = gameObject.AddComponent<LoadNewArea>();
+		loadArea.sceneToLoad = "bedroom";
 		loadArea.LoadArea();
 	}
 

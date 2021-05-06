@@ -8,9 +8,6 @@ public class Weapon : InventoryItem
     public float bluntDamage = 1;
     public float piercingDamage = 1;
 
-    // This property is not being used yet, but it will come
-    // into play when we implement a way for the player
-    // to select their desired weapon.
     public uint numberOfUsesPerFight = 3;
 
     void Reset() {

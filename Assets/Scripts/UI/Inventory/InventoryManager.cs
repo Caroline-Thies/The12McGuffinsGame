@@ -63,6 +63,10 @@ public class InventoryManager : MonoBehaviour {
             index += 1;
         });
 
+        // FIXME This is *totally* not the proper place to do this, but
+        //       it gets the job done for the last sprint.
+        GiveItem("weapon-fist");
+
         containerTransform.pivot = oldPivot;
         updateSlots();
     }

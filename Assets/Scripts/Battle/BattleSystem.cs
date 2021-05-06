@@ -72,7 +72,7 @@ public class BattleSystem : MonoBehaviour
 		// Initialize the maximum usages for all available weapons
 		availableWeapons.ForEach(item => {
 			Weapon weapon = (Weapon) item;
-			weaponUsages.Add(weapon, weapon.numberOfUsesPerFight);
+			weaponUsages.Add(weapon, weapon.numberOfUsesPerFight > 0 ? (uint) weapon.numberOfUsesPerFight : 1);
 		});
     }
 
@@ -133,7 +133,10 @@ public class BattleSystem : MonoBehaviour
 					Weapon weapon = entry.Key;
 					uint usages = entry.Value;
 
-					if (usages > 0) {
+					if (weapon.numberOfUsesPerFight == 0) {
+						names.Add(weapon.name);
+						selectableWeapons.Add(weapon);
+					} else if (usages > 0) {
 						string text = string.Format("{0} ({1})", weapon.name, usages);
 						names.Add(text);
 						selectableWeapons.Add(weapon);
@@ -213,7 +216,10 @@ public class BattleSystem : MonoBehaviour
 		uint currentUsages;
 
 		if (weaponUsages.TryGetValue(weapon, out currentUsages)) {
-			weaponUsages[weapon] = currentUsages > 0 ? currentUsages - 1 : 0;
+			// If numberOfUsesPerFight is zero we know that the weapon is supposed to have inifite uses
+			if (weapon.numberOfUsesPerFight > 0) {
+				weaponUsages[weapon] = currentUsages > 0 ? currentUsages - 1 : 0;
+			}
 
 			currentUnit.TakeDamage(weapon);
 			UpdateHUD();

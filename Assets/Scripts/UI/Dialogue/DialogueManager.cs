@@ -9,10 +9,13 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     private Queue<string> sentences;
+    private InputManager inputManager;
+
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        inputManager = FindObjectOfType<InputManager>();
     }
 
     public void StartDialogue(Dialogue dialogue){
@@ -24,6 +27,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(inputSentence);
         }
         DisplayNextSenctence();
+        inputManager.SetExplicitlyDisabled(true);
     }
 
     public void DisplayNextSenctence(){
@@ -38,5 +42,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue(){
         animator.SetBool("IsOpen", false);
+        inputManager.SetExplicitlyDisabled(false);
     }
 }

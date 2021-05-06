@@ -2773,6 +2773,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 1575342681159523871, guid: 695463acf0489404b96aa1a6fecc7a2c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eef610e7f2502414aaf5c2ec1334effd, type: 3}
+    - target: {fileID: 1575342681159523871, guid: 695463acf0489404b96aa1a6fecc7a2c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695463acf0489404b96aa1a6fecc7a2c, type: 3}
 --- !u!1 &650600027055780875 stripped

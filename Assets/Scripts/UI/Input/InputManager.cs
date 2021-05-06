@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
 
     private UserPrompt activePrompt = null;
 
+    private bool explicitlyDisabled = false;
+
     void Start() {
         if (!inputManagerExists) {
             inputManagerExists = true;
@@ -50,7 +52,7 @@ public class InputManager : MonoBehaviour
     }
 
     public Vector2 GetMovement() {
-        if (activePrompt != null) {
+        if (activePrompt != null || explicitlyDisabled) {
             return new Vector2(0, 0);
         }
 
@@ -67,7 +69,7 @@ public class InputManager : MonoBehaviour
     }
 
     public bool GetKeyDown(UnityEngine.KeyCode name) {
-        if (activePrompt == null) {
+        if (activePrompt == null && !explicitlyDisabled) {
             return Input.GetKeyDown(name);
         } else {
             return false;
@@ -91,6 +93,10 @@ public class InputManager : MonoBehaviour
 
     public UserPrompt getActivePrompt() {
         return activePrompt;
+    }
+
+    public void SetExplicitlyDisabled(bool state) {
+        explicitlyDisabled = state;
     }
 
 }

@@ -355,6 +355,7 @@ public class BattleSystem : MonoBehaviour
 	}
 
 	private void ReturnToBedroom() {
+		ScenesData.resetLastPositions();
 		LoadNewArea loadArea = gameObject.AddComponent<LoadNewArea>();
 		loadArea.sceneToLoad = "bedroom";
 		loadArea.LoadArea();

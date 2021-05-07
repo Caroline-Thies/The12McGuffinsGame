@@ -20,4 +20,12 @@ public static class ScenesData
         {"SampleScene", null},
         {"Village", null}
     };
+
+    public static void resetLastPositions() {
+        List<string> keys = new List<string>(lastPlayerTransforms.Keys);
+
+        foreach (string key in keys) {
+            lastPlayerTransforms[key] = null;
+        }
+    }
 }

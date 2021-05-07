@@ -706,6 +706,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3305197626202347835, guid: 26e7aa5f474334f47a76a9a6be8ea475,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.299805
+      objectReference: {fileID: 0}
     - target: {fileID: 3305197627173677130, guid: 26e7aa5f474334f47a76a9a6be8ea475,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -795,6 +800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423766840630480444, guid: 26e7aa5f474334f47a76a9a6be8ea475,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.299805
       objectReference: {fileID: 0}
     - target: {fileID: 9186539618267080215, guid: 26e7aa5f474334f47a76a9a6be8ea475,
         type: 3}
@@ -1486,6 +1496,7 @@ GameObject:
   - component: {fileID: 2123929734}
   - component: {fileID: 2123929733}
   - component: {fileID: 2123929737}
+  - component: {fileID: 2123929738}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -1591,6 +1602,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2123929738}
+        m_MethodName: OnNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2123929735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,3 +1664,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: COLLEGE_TELPORTED_TO_VOID
+--- !u!114 &2123929738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123929731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03ac801e56d54e83be0c7ad6520fdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

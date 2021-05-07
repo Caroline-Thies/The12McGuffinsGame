@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: weapon-sword
   tag: weapon
-  sprite: {fileID: 21300000, guid: 6be94218f564d4186bb52c932d8e2caf, type: 3}
-  hiddenSprite: {fileID: 21300000, guid: 6be94218f564d4186bb52c932d8e2caf, type: 3}
+  sprite: {fileID: 21300000, guid: b48345048fef644d28a5574c62179379, type: 3}
+  hiddenSprite: {fileID: 21300000, guid: 88a04f73a74eb4f158d830be526d375e, type: 3}
   bluntDamage: 0.3
   piercingDamage: 20
-  numberOfUsesPerFight: 5
+  numberOfUsesPerFight: 2

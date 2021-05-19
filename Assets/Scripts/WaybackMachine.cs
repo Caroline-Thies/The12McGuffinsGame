@@ -11,20 +11,20 @@ public class WaybackMachine : MonoBehaviour
     public string destIfMcGuffinFound;
     public string destIfMcGuffinNotFound;
 
-    void Start()
-    {
+
+    public void teleport() {
         loadNew = gameObject.AddComponent<LoadNewArea>() as LoadNewArea;
         invManager = FindObjectOfType<InventoryManager>();
         interactable = GetComponent<Interactable>();
 
-        interactable.interactAction.AddListener(() => {
-            if (invManager.HasItem("mcguffin")) {
-                loadNew.sceneToLoad = destIfMcGuffinFound;
+        if (invManager.HasItem("mcguffin")) {
+                Debug.Log(destIfMcGuffinFound);
+                loadNew.sceneToLoad = this.destIfMcGuffinFound;
             } else {
-                loadNew.sceneToLoad = destIfMcGuffinNotFound;
+                Debug.Log(destIfMcGuffinNotFound);
+                loadNew.sceneToLoad = this.destIfMcGuffinNotFound;
             }
-
+            Debug.Log("ScenetoLoad:" + loadNew.sceneToLoad);
             loadNew.LoadArea();
-        });
     }
 }

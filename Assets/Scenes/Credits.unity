@@ -231,17 +231,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316470232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.000020462785, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1905397024}
   m_Father: {fileID: 1238968963}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.002, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 518, y: -287.4}
+  m_AnchoredPosition: {x: 373, y: -312}
   m_SizeDelta: {x: 160, y: 49.10083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316470234
@@ -495,8 +495,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\nProduct Owner : \n\nScrum Master  :  \n\nDeveloper        : \t\n\n\n\n\n\n\n\nAnnoyed
-    Citizens :\t\n\n"
+  m_Text: "\n\nProduct Owner : \n\nScrum Master  :  \n\nDeveloper        : \t\n\n\n\nThird
+    Party Testers:\n\n\n\n\n\nAnnoyed Citizens :\t\n\n"
 --- !u!222 &500174391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\n\nCaroline Thies\n\nEmina Arnautovic\n\nMax Guggenberger\t\nHannes Holzwarth\nAndr\xE9
-    Amann\n\n\n\n\n\n44\n"
+    Amann\n\nMax Hammer\nMarc Pfitzenmaier\n\n\n\n\n44\n"
 --- !u!222 &810015324
 CanvasRenderer:
   m_ObjectHideFlags: 0

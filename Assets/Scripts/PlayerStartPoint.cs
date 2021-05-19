@@ -14,7 +14,7 @@ public class PlayerStartPoint : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         player.transform.position = transform.position;
         cam = FindObjectOfType<CameraController>();
-        cam.transform.position = new Vector3(transform.position.x, transform.position.y, GetComponent<Camera>().transform.position.z); //this is necessary as to keep the camera's z position. Otherwise weird behaviour
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z); //this is necessary as to keep the camera's z position. Otherwise weird behaviour
     }
 
     private void checkLastPlayerLocation(){
